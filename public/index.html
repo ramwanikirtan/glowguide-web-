@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowGuide – Your Wellness Dashboard</title>
+    <meta name="description"
+        content="GlowGuide is your personal AI-powered skincare and wellness companion. Track hydration, build routines, and get expert skin advice.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Firebase SDK (compat version for simplicity) -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+</head>
+
+<body>
+
+    <!-- ══════════════════════════════════════
+     AUTH SCREEN 1 — LANDING
+══════════════════════════════════════ -->
+    <div class="auth-screen" id="authLanding">
+        <!-- Botanical decoration -->
+        <div class="auth-botanical auth-botanical-tl">
+            <svg width="200" height="220" viewBox="0 0 180 200" fill="none" opacity="0.18">
+                <path d="M90 200 Q90 140 90 80" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" />
+                <path d="M90 120 Q110 105 125 90 Q108 100 90 108" stroke="#C9A84C" stroke-width="2" fill="none"
+                    stroke-linecap="round" />
+                <path d="M90 140 Q70 125 55 110 Q72 120 90 128" stroke="#C9A84C" stroke-width="2" fill="none"
+                    stroke-linecap="round" />
+                <path d="M60 200 Q58 160 50 110" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"
+                    opacity="0.7" />
+                <path d="M55 145 Q38 135 28 120 Q42 130 55 138" stroke="#C9A84C" stroke-width="1.5" fill="none"
+                    stroke-linecap="round" opacity="0.7" />
+                <path d="M120 200 Q122 160 130 110" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"
+                    opacity="0.7" />
+                <path d="M125 145 Q142 135 152 120 Q138 130 125 138" stroke="#C9A84C" stroke-width="1.5" fill="none"
+                    stroke-linecap="round" opacity="0.7" />
+                <circle cx="90" cy="75" r="6" stroke="#C9A84C" stroke-width="1.5" fill="none" />
+                <circle cx="90" cy="75" r="2.5" fill="#C9A84C" opacity="0.6" />
+            </svg>
+        </div>
+        <div class="auth-botanical auth-botanical-br">
+            <svg width="160" height="180" viewBox="0 0 180 200" fill="none" opacity="0.12"
+                style="transform:rotate(180deg)">
+                <path d="M90 200 Q90 140 90 80" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" />
+                <path d="M90 120 Q110 105 125 90 Q108 100 90 108" stroke="#C9A84C" stroke-width="2" fill="none"
+                    stroke-linecap="round" />
+                <path d="M90 140 Q70 125 55 110 Q72 120 90 128" stroke="#C9A84C" stroke-width="2" fill="none"
+                    stroke-linecap="round" />
+                <circle cx="90" cy="75" r="6" stroke="#C9A84C" stroke-width="1.5" fill="none" />
+            </svg>
+        </div>
+
+        <div class="auth-center">
+            <!-- Logo -->
+            <div class="auth-logo-wrap">
+                <div class="auth-logo-mark">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c1.5 0 3-.3 4.3-.9-.8-1.8-2-5.5.7-8.2 2.7-2.7 6.4-1.5 8.2-.7.6-1.3.9-2.8.9-4.3 0-5.5-4.5-10-10-10z"
+                            fill="currentColor" />
+                    </svg>
+                </div>
+                <h1 class="auth-logo-text">GlowGuide</h1>
+            </div>
+            <p class="auth-tagline">Your personal skincare &amp; wellness companion</p>
+            <p class="auth-subtitle">AI-powered routines, product recommendations and wellness guidance — all
+                personalized to you</p>
+
+            <!-- Auth buttons -->
+            <div class="auth-buttons">
+                <button class="auth-btn auth-btn-google" id="authGoogleBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                            fill="#4285F4" />
+                        <path
+                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                            fill="#34A853" />
+                        <path
+                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                            fill="#FBBC05" />
+                        <path
+                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                            fill="#EA4335" />
+                    </svg>
+                    Continue with Google
+                </button>
+
+                <button class="auth-btn auth-btn-email" id="authEmailBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    Continue with Email
+                </button>
+            </div>
+
+            <p class="auth-terms">By continuing you agree to our <a href="#">Terms of Service</a> and <a
+                    href="#">Privacy Policy</a></p>
+
+            <!-- Not configured banner -->
+            <div class="auth-not-configured" id="authNotConfigured" style="display:none">
+                <span>⚙️</span>
+                <span>Firebase not configured yet. Add your keys to <code>.env</code> — see <a
+                        href="https://console.firebase.google.com"
+                        target="_blank">console.firebase.google.com</a></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+     AUTH SCREEN 2 — EMAIL FORM
+══════════════════════════════════════ -->
+    <div class="auth-screen" id="authEmail" style="display:none">
+        <div class="auth-card">
+            <!-- Back button -->
+            <button class="auth-back-btn" id="authBackBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6" />
+                </svg>
+                Back
+            </button>
+
+            <!-- Logo small -->
+            <div class="auth-card-logo">
+                <div class="auth-logo-mark small">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c1.5 0 3-.3 4.3-.9-.8-1.8-2-5.5.7-8.2 2.7-2.7 6.4-1.5 8.2-.7.6-1.3.9-2.8.9-4.3 0-5.5-4.5-10-10-10z"
+                            fill="currentColor" />
+                    </svg>
+                </div>
+                <span class="auth-card-logo-text">GlowGuide</span>
+            </div>
+
+            <!-- Toggle tabs -->
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="tabSignup" data-mode="signup">Sign Up</button>
+                <button class="auth-tab" id="tabLogin" data-mode="login">Log In</button>
+            </div>
+
+            <!-- Error banner -->
+            <div class="auth-error" id="authEmailError" style="display:none"></div>
+            <!-- Success banner -->
+            <div class="auth-success" id="authEmailSuccess" style="display:none"></div>
+
+            <!-- Sign Up form -->
+            <form class="auth-form" id="formSignup" novalidate>
+                <div class="auth-field">
+                    <label class="auth-field-label">Full Name</label>
+                    <input type="text" id="signupName" class="auth-input" placeholder="Your name" autocomplete="name">
+                    <span class="auth-field-error" id="errSignupName"></span>
+                </div>
+                <div class="auth-field">
+                    <label class="auth-field-label">Email</label>
+                    <input type="email" id="signupEmail" class="auth-input" placeholder="you@email.com"
+                        autocomplete="email">
+                    <span class="auth-field-error" id="errSignupEmail"></span>
+                </div>
+                <div class="auth-field">
+                    <label class="auth-field-label">Password</label>
+                    <div class="auth-input-wrap">
+                        <input type="password" id="signupPassword" class="auth-input" placeholder="Min. 8 characters"
+                            autocomplete="new-password">
+                        <button type="button" class="auth-eye-btn" data-target="signupPassword">👁</button>
+                    </div>
+                    <span class="auth-field-error" id="errSignupPassword"></span>
+                </div>
+                <div class="auth-field">
+                    <label class="auth-field-label">Confirm Password</label>
+                    <div class="auth-input-wrap">
+                        <input type="password" id="signupConfirm" class="auth-input" placeholder="Repeat password"
+                            autocomplete="new-password">
+                        <button type="button" class="auth-eye-btn" data-target="signupConfirm">👁</button>
+                    </div>
+                    <span class="auth-field-error" id="errSignupConfirm"></span>
+                </div>
+                <button type="submit" class="auth-submit-btn" id="signupSubmitBtn">
+                    <span class="btn-text">Create Account</span>
+                    <span class="btn-spinner" style="display:none">⏳</span>
+                </button>
+            </form>
+
+            <!-- Log In form -->
+            <form class="auth-form" id="formLogin" style="display:none" novalidate>
+                <div class="auth-field">
+                    <label class="auth-field-label">Email</label>
+                    <input type="email" id="loginEmail" class="auth-input" placeholder="you@email.com"
+                        autocomplete="email">
+                    <span class="auth-field-error" id="errLoginEmail"></span>
+                </div>
+                <div class="auth-field">
+                    <label class="auth-field-label">Password</label>
+                    <div class="auth-input-wrap">
+                        <input type="password" id="loginPassword" class="auth-input" placeholder="Your password"
+                            autocomplete="current-password">
+                        <button type="button" class="auth-eye-btn" data-target="loginPassword">👁</button>
+                    </div>
+                    <span class="auth-field-error" id="errLoginPassword"></span>
+                </div>
+                <button type="button" class="auth-forgot-btn" id="forgotPasswordBtn">Forgot password?</button>
+                <button type="submit" class="auth-submit-btn" id="loginSubmitBtn">
+                    <span class="btn-text">Log In</span>
+                    <span class="btn-spinner" style="display:none">⏳</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="app-shell" id="appShell" style="display:none">
+
+        <!-- ══════════════════════════════════════
+         SIDEBAR NAVIGATION
+    ══════════════════════════════════════ -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+
+                <!-- Logo -->
+                <div class="sidebar-logo">
+                    <div class="sidebar-logo-mark">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c1.5 0 3-.3 4.3-.9-.8-1.8-2-5.5.7-8.2 2.7-2.7 6.4-1.5 8.2-.7.6-1.3.9-2.8.9-4.3 0-5.5-4.5-10-10-10z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="sidebar-logo-text">GlowGuide</h1>
+                        <p class="sidebar-tagline">Wellness Dashboard</p>
+                    </div>
+                </div>
+
+                <!-- Nav Items -->
+                <ul class="sidebar-nav" id="sidebarNav">
+                    <li>
+                        <a href="javascript:void(0)" onclick="navigate('page-home')" class="nav-item active"
+                            data-page="home">
+                            <span class="nav-icon">🏠</span>
+                            <span class="nav-label">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" onclick="navigate('page-profile')" class="nav-item"
+                            data-page="profile">
+                            <span class="nav-icon">✨</span>
+                            <span class="nav-label">My Skin Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" onclick="navigate('page-water')" class="nav-item"
+                            data-page="water">
+                            <span class="nav-icon">💧</span>
+                            <span class="nav-label">Water Tracker</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" onclick="navigate('page-routines')" class="nav-item"
+                            data-page="routines">
+                            <span class="nav-icon">🌿</span>
+                            <span class="nav-label">My Routines</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" onclick="navigate('page-products')" class="nav-item"
+                            data-page="products">
+                            <span class="nav-icon">🛒</span>
+                            <span class="nav-label">Products</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" onclick="navigate('page-dermatologist')" class="nav-item"
+                            data-page="dermatologist">
+                            <span class="nav-icon">🏥</span>
+                            <span class="nav-label">Dermatologist</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" onclick="navigate('page-settings')" class="nav-item"
+                            data-page="settings">
+                            <span class="nav-icon">⚙️</span>
+                            <span class="nav-label">Settings</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Sidebar Footer -->
+                <div class="sidebar-footer">
+                    <div class="sidebar-location" id="sidebarLocation">
+                        <span>📍</span>
+                        <span id="sidebarLocationText">Detecting...</span>
+                    </div>
+                    <div class="sidebar-user">
+                        <div class="sidebar-avatar" id="sidebarAvatar">
+                            <img id="sidebarAvatarImg" src="" alt=""
+                                style="display:none;width:100%;height:100%;border-radius:50%;object-fit:cover;">
+                            <span id="sidebarAvatarInitials">G</span>
+                        </div>
+                        <div class="sidebar-user-info">
+                            <span class="sidebar-username" id="sidebarUsername">You</span>
+                            <span class="sidebar-useremail" id="sidebarUseremail"></span>
+                        </div>
+                    </div>
+                    <button class="sidebar-signout-btn" id="signOutBtn" style="display:none">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                            <polyline points="16 17 21 12 16 7" />
+                            <line x1="21" y1="12" x2="9" y2="12" />
+                        </svg>
+                        Sign Out
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+        <!-- ══════════════════════════════════════
+         MAIN CONTENT AREA
+    ══════════════════════════════════════ -->
+        <main class="main-content" id="mainContent">
+
+            <!-- ── HOME PAGE ── -->
+            <section class="page active" id="page-home">
+                <div class="page-inner">
+
+                    <!-- Top Row -->
+                    <div class="home-toprow">
+                        <div>
+                            <h2 class="home-greeting" id="homeGreeting"></h2>
+                            <p class="home-date" id="homeDate"></p>
+                            <p class="home-subtext">Your skin is waiting 🌿</p>
+                        </div>
+                    </div>
+
+                    <!-- Today's Tip -->
+                    <div class="tip-card-full" id="homeTipCard">
+                        <div class="tip-card-label">TODAY'S WELLNESS TIP</div>
+                        <div class="tip-card-body">
+                            <div class="tip-leaf">🌿</div>
+                            <p class="tip-card-text" id="homeTipText">Loading your tip...</p>
+                        </div>
+                        <button class="tip-share-btn" id="tipShareBtn" title="Copy tip to clipboard">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" />
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                            </svg>
+                            Share tip
+                        </button>
+                    </div>
+
+                    <!-- 2-column grid -->
+                    <div class="home-2col">
+
+                        <!-- Water Card -->
+                        <div class="home-card water-home-card" id="waterHomeCard">
+                            <h3 class="home-card-title">Today's Water 💧</h3>
+                            <div class="water-ring-wrap">
+                                <svg class="water-ring-svg" viewBox="0 0 120 120" width="120" height="120">
+                                    <circle class="ring-track" cx="60" cy="60" r="50" stroke-width="10" fill="none" />
+                                    <circle class="ring-fill" id="homeWaterRingFill" cx="60" cy="60" r="50"
+                                        stroke-width="10" fill="none" stroke-dasharray="314" stroke-dashoffset="314"
+                                        transform="rotate(-90 60 60)" />
+                                    <text x="60" y="55" text-anchor="middle" class="ring-count"
+                                        id="homeWaterCount">0</text>
+                                    <text x="60" y="72" text-anchor="middle" class="ring-target" id="homeWaterTarget">/
+                                        8 glasses</text>
+                                </svg>
+                            </div>
+                            <div class="water-home-actions"
+                                style="display:flex; flex-direction:column; align-items:center; gap:8px; margin-top:16px;">
+                                <button class="cta-btn" id="homeAddGlassBtn">+ Add Glass</button>
+                                <span class="water-home-hint" id="homeWaterNextReminder"
+                                    style="font-size:12px; opacity:0.8;">Next reminder: --</span>
+                            </div>
+                            <p class="water-home-hint" id="waterHomeHint" style="margin-top:12px">Set up your water
+                                tracker →</p>
+                            <button class="card-link-btn"
+                                onclick="window.navigate ? navigate('page-water') : location.hash='#water'"
+                                style="background:none;border:none;color:var(--cream);text-decoration:underline;cursor:pointer;">Open
+                                Water Tracker</button>
+                        </div>
+
+                        <!-- Skin Profile Snapshot -->
+                        <div class="home-card" id="profileHomeCard">
+                            <h3 class="home-card-title">Your Skin Profile ✨</h3>
+                            <div id="profileHomeEmpty" class="card-empty-state">
+                                <p>Start your consultation to see your skin profile</p>
+                                <button class="cta-btn" id="homeBeginConsultBtn">Begin AI Consultation</button>
+                            </div>
+                            <div id="profileHomeData" class="profile-stats" style="display:none">
+                                <div class="profile-stat">
+                                    <span class="stat-label">Skin Type</span>
+                                    <span class="stat-value" id="homeSkinType">–</span>
+                                </div>
+                                <div class="profile-stat">
+                                    <span class="stat-label">Main Concern</span>
+                                    <span class="stat-value" id="homeSkinConcern">–</span>
+                                </div>
+                                <div class="profile-stat">
+                                    <span class="stat-label">Budget</span>
+                                    <span class="stat-value" id="homeSkinBudget">–</span>
+                                </div>
+                                <div class="profile-stat">
+                                    <span class="stat-label">Routine Steps</span>
+                                    <span class="stat-value" id="homeSkinRoutine">–</span>
+                                </div>
+                            </div>
+                            <button id="homeUpdateProfileBtn" class="secondary-btn"
+                                style="display:none; margin-top:16px; width:100%;"
+                                onclick="openDrawer('I want to update my skin profile')">Update profile</button>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions-grid">
+                        <button class="quick-action-card" id="qaAnalyze" onclick="console.log('card clicked'); openDrawer('I\'d like to analyze my skin photo')">
+                            <div class="qa-icon-wrap">📸</div>
+                            <span class="qa-label">Analyze Skin</span>
+                        </button>
+                        <button class="quick-action-card" id="qaWater" onclick="console.log('card clicked'); window.location.hash='#water'">
+                            <div class="qa-icon-wrap">💧</div>
+                            <span class="qa-label">Log Water</span>
+                        </button>
+                        <button class="quick-action-card" id="qaRoutine" onclick="console.log('card clicked'); window.location.hash='#routines'">
+                            <div class="qa-icon-wrap">🌿</div>
+                            <span class="qa-label">View Routine</span>
+                        </button>
+                        <button class="quick-action-card" id="qaDoctor" onclick="console.log('card clicked'); window.location.hash='#dermatologist'">
+                            <div class="qa-icon-wrap">🏥</div>
+                            <span class="qa-label">Find Doctor</span>
+                        </button>
+                    </div>
+
+                    <!-- Today's Routine Checklist -->
+                    <div class="home-card full-width-card" id="routineHomeCard">
+                        <h3 class="home-card-title">Today's Routine 🌿</h3>
+                        <div id="routineHomeEmpty" class="card-empty-state">
+                            <p>Complete a consultation to get your personalized routine</p>
+                            <button class="cta-btn" id="homeGetRoutineBtn">Get My Routine</button>
+                        </div>
+                        <div id="routineHomeData" style="display:none">
+                            <div class="routine-progress-wrap">
+                                <div class="routine-progress-bar-bg">
+                                    <div class="routine-progress-bar-fill" id="homeRoutineProgressFill"
+                                        style="width:0%"></div>
+                                </div>
+                                <span class="routine-progress-label" id="homeRoutineProgressLabel">0% complete</span>
+                            </div>
+                            <div class="routine-home-steps" id="routineHomeSteps"></div>
+                        </div>
+                    </div>
+
+                    <!-- Recent AI Insights -->
+                    <div class="home-card full-width-card">
+                        <h3 class="home-card-title">Recent AI Insights 💬</h3>
+                        <div id="insightsEmpty" class="card-empty-state">
+                            <p>Your AI conversation insights will appear here</p>
+                            <button class="cta-btn" id="homeFirstConsultBtn">Start First Consultation</button>
+                        </div>
+                        <div id="insightsList" class="insights-list" style="display:none"></div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ── MY SKIN PROFILE PAGE ── -->
+            <section class="page" id="page-profile">
+                <div class="page-inner">
+                    <div class="page-header">
+                        <h2 class="page-title">My Skin Profile ✨</h2>
+                        <p class="page-subtitle">Built from your AI consultation history</p>
+                    </div>
+
+                    <div id="profilePageEmpty" class="page-empty-state">
+                        <div class="empty-illustration">✨</div>
+                        <h3>No profile yet</h3>
+                        <p>Start an AI consultation to build your skin profile</p>
+                        <button class="cta-btn" id="profileBeginBtn">Begin Consultation</button>
+                    </div>
+
+                    <div id="profilePageData" style="display:none">
+                        <div class="profile-cards-grid">
+                            <div class="profile-big-card">
+                                <div class="profile-big-icon">💧</div>
+                                <div class="profile-big-label">Skin Type</div>
+                                <div class="profile-big-value" id="profileSkinTypeFull">–</div>
+                            </div>
+                            <div class="profile-big-card">
+                                <div class="profile-big-icon">🎯</div>
+                                <div class="profile-big-label">Main Concern</div>
+                                <div class="profile-big-value" id="profileConcernFull">–</div>
+                            </div>
+                            <div class="profile-big-card">
+                                <div class="profile-big-icon">💰</div>
+                                <div class="profile-big-label">Budget</div>
+                                <div class="profile-big-value" id="profileBudgetFull">–</div>
+                            </div>
+                            <div class="profile-big-card">
+                                <div class="profile-big-icon">📅</div>
+                                <div class="profile-big-label">Last Consultation</div>
+                                <div class="profile-big-value" id="profileLastConsultFull">–</div>
+                            </div>
+                        </div>
+
+                        <div class="home-card full-width-card" style="margin-top:24px">
+                            <h3 class="home-card-title">Consultation Notes</h3>
+                            <p class="profile-notes" id="profileNotesFull">–</p>
+                        </div>
+                        <div style="margin-top:16px; text-align:center">
+                            <button class="cta-btn" id="profileUpdateBtn">Update with New Consultation</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── WATER TRACKER PAGE ── -->
+            <section class="page" id="page-water">
+                <div class="page-inner">
+                    <div class="page-header">
+                        <h2 class="page-title">Water Tracker 💧</h2>
+                        <p class="page-subtitle">Stay hydrated for glowing skin</p>
+                    </div>
+
+                    <!-- Setup Form -->
+                    <div class="home-card full-width-card" id="waterSetupCard">
+                        <h3 class="home-card-title">Calculate Your Daily Target</h3>
+                        <div class="water-setup-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Weight</label>
+                                    <div class="input-unit-wrap">
+                                        <input type="number" id="waterWeight" class="form-input" placeholder="70"
+                                            min="30" max="300">
+                                        <select id="waterWeightUnit" class="unit-select">
+                                            <option value="kg">kg</option>
+                                            <option value="lbs">lbs</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Age</label>
+                                    <input type="number" id="waterAge" class="form-input" placeholder="25" min="10"
+                                        max="120">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Activity Level</label>
+                                    <select id="waterActivity" class="form-input">
+                                        <option value="sedentary">Sedentary (little/no exercise)</option>
+                                        <option value="light">Lightly Active (1-3x/week)</option>
+                                        <option value="active" selected>Active (3-5x/week)</option>
+                                        <option value="very_active">Very Active (6-7x/week)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Climate</label>
+                                    <select id="waterClimate" class="form-input">
+                                        <option value="cool">Cool / Cold</option>
+                                        <option value="moderate" selected>Moderate</option>
+                                        <option value="hot">Hot / Humid</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Gender</label>
+                                    <select id="waterGender" class="form-input">
+                                        <option value="female">Female</option>
+                                        <option value="male">Male</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Special Conditions</label>
+                                    <select id="waterCondition" class="form-input">
+                                        <option value="none">Neither</option>
+                                        <option value="pregnant">Pregnant</option>
+                                        <option value="breastfeeding">Breastfeeding</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="cta-btn" id="waterCalcBtn" style="width:100%; margin-top:8px">Calculate My
+                                Target 💧</button>
+                        </div>
+
+                        <div class="water-result" id="waterResult" style="display:none">
+                            <div class="water-result-text">Your daily target: <span id="waterResultGlasses"
+                                    class="result-highlight">8</span> glasses (<span id="waterResultMl">2000</span> ml)
+                            </div>
+                            <p class="water-result-sub">Based on your body profile</p>
+                        </div>
+                    </div>
+
+                    <!-- Daily Tracker -->
+                    <div class="home-card full-width-card" id="waterDailyCard">
+                        <div class="water-tracker-layout">
+                            <div class="water-ring-section">
+                                <svg class="water-ring-svg large" viewBox="0 0 160 160" width="160" height="160">
+                                    <circle class="ring-track" cx="80" cy="80" r="68" stroke-width="12" fill="none" />
+                                    <circle class="ring-fill blue" id="waterPageRingFill" cx="80" cy="80" r="68"
+                                        stroke-width="12" fill="none" stroke-dasharray="427" stroke-dashoffset="427"
+                                        transform="rotate(-90 80 80)" />
+                                    <text x="80" y="74" text-anchor="middle" class="ring-count large"
+                                        id="waterPageCount">0</text>
+                                    <text x="80" y="93" text-anchor="middle" class="ring-target" id="waterPageTarget">/
+                                        8 glasses</text>
+                                </svg>
+                                <div class="water-btns">
+                                    <button class="cta-btn" id="addGlassBtn">+ Add Glass (250ml)</button>
+                                    <button class="secondary-btn" id="addCustomBtn">+ Custom Amount</button>
+                                </div>
+                            </div>
+                            <div class="water-glasses-section">
+                                <h3 class="home-card-title">Today's Progress</h3>
+                                <div class="glass-icons" id="glassIcons"></div>
+                                <div class="water-log" id="waterLog">
+                                    <p class="water-log-empty">No entries yet today</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reminders -->
+                    <div class="home-card full-width-card">
+                        <h3 class="home-card-title">Reminders 🔔</h3>
+                        <div class="reminder-toggle-row">
+                            <label class="toggle-label">Enable Water Reminders</label>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="reminderToggle">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="reminder-times" id="reminderTimes">
+                            <p class="reminder-hint">Enable reminders above to set times</p>
+                            <div class="reminder-time-slots" id="reminderTimeSlots" style="display:none">
+                                <div class="time-slot"><input type="time" class="time-input reminder-time"
+                                        value="08:00"><button class="remove-time-btn">×</button></div>
+                                <div class="time-slot"><input type="time" class="time-input reminder-time"
+                                        value="10:30"><button class="remove-time-btn">×</button></div>
+                                <div class="time-slot"><input type="time" class="time-input reminder-time"
+                                        value="13:00"><button class="remove-time-btn">×</button></div>
+                                <div class="time-slot"><input type="time" class="time-input reminder-time"
+                                        value="16:00"><button class="remove-time-btn">×</button></div>
+                                <div class="time-slot"><input type="time" class="time-input reminder-time"
+                                        value="19:00"><button class="remove-time-btn">×</button></div>
+                                <button class="secondary-btn" id="addTimeSlotBtn" style="margin-top:8px">+ Add
+                                    Time</button>
+                                <button class="cta-btn" id="saveRemindersBtn"
+                                    style="margin-top:8px; margin-left:8px">Save Reminders</button>
+                            </div>
+                        </div>
+                        <p class="reminder-note">💡 Keep this tab open for reminders to work</p>
+                    </div>
+
+                    <!-- Weekly Chart -->
+                    <div class="home-card full-width-card">
+                        <h3 class="home-card-title">This Week</h3>
+                        <div class="weekly-chart" id="weeklyChart"></div>
+                    </div>
+
+                    <!-- Benefits -->
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">💦</div>
+                            <p>Hydrated skin looks plumper and more youthful</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🧹</div>
+                            <p>Water flushes toxins that cause breakouts</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">✨</div>
+                            <p>Even mild dehydration makes skin look dull</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── MY ROUTINES PAGE ── -->
+            <section class="page" id="page-routines">
+                <div class="page-inner">
+                    <div class="page-header">
+                        <h2 class="page-title">My Routines 🌿</h2>
+                        <p class="page-subtitle">Check off steps to track your daily consistency</p>
+                    </div>
+
+                    <div id="routinesEmpty" class="page-empty-state">
+                        <div class="empty-illustration">🌿</div>
+                        <h3>No routine saved yet</h3>
+                        <p>Complete an AI consultation and your personalized routine will appear here</p>
+                        <button class="cta-btn" id="routinesBeginBtn">Get My Routine</button>
+                    </div>
+
+                    <div id="routinesData" style="display:none">
+                        <!-- Overall progress -->
+                        <div class="home-card full-width-card" style="margin-bottom:24px">
+                            <div class="routine-progress-wrap">
+                                <h3 class="home-card-title" style="margin-bottom:12px">Today's Progress</h3>
+                                <div class="routine-progress-bar-bg">
+                                    <div class="routine-progress-bar-fill" id="routineProgressFill" style="width:0%">
+                                    </div>
+                                </div>
+                                <span class="routine-progress-label" id="routineProgressLabel">0 of 0 steps
+                                    complete</span>
+                            </div>
+                        </div>
+
+                        <!-- Morning card -->
+                        <div class="routine-time-card">
+                            <div class="routine-time-header morning">
+                                <span class="routine-time-icon">☀️</span>
+                                <h3 class="routine-time-title">Morning Routine</h3>
+                            </div>
+                            <div class="routine-steps" id="morningSteps"></div>
+                        </div>
+
+                        <!-- Evening card -->
+                        <div class="routine-time-card">
+                            <div class="routine-time-header evening">
+                                <span class="routine-time-icon">🌙</span>
+                                <h3 class="routine-time-title">Evening Routine</h3>
+                            </div>
+                            <div class="routine-steps" id="eveningSteps"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── PRODUCTS PAGE ── -->
+            <section class="page" id="page-products">
+                <div class="page-inner">
+                    <div class="page-header">
+                        <h2 class="page-title">Product Library 🛒</h2>
+                        <p class="page-subtitle">Products recommended during your consultations</p>
+                    </div>
+
+                    <div id="productsEmpty" class="page-empty-state">
+                        <div class="empty-illustration">🛒</div>
+                        <h3>No products saved yet</h3>
+                        <p>Complete an AI consultation to get personalized product recommendations</p>
+                        <button class="cta-btn" id="productsBeginBtn">Start Consultation</button>
+                        <p class="products-disclaimer" style="margin-top:16px">Prices may vary by retailer. Always patch
+                            test new products.</p>
+                    </div>
+
+                    <div id="productsGrid" class="products-full-grid" style="display:none"></div>
+                    <p class="products-disclaimer" id="productsDisclaimer" style="display:none; margin-top:16px">Prices
+                        may vary by retailer. Always patch test new products.</p>
+                </div>
+            </section>
+
+            <!-- ── DERMATOLOGIST PAGE ── -->
+            <section class="page" id="page-dermatologist">
+                <div class="page-inner">
+                    <div class="page-header">
+                        <h2 class="page-title">Find a Dermatologist</h2>
+                        <p class="page-subtitle">Verified skin specialists near you</p>
+                    </div>
+
+                    <div class="home-card full-width-card derm-location-card">
+                        <div class="derm-location-row" style="display:flex; justify-content:space-between; align-items:center;">
+                            <div class="derm-location-display" id="dermLocationDisplay" style="display:flex; gap:8px; align-items:center;">
+                                <span>📍</span>
+                                <span id="dermLocationText" style="font-weight:600;">Detecting...</span>
+                            </div>
+                            <button id="changeDermLocationBtn" class="card-link-btn" style="background:none; border:none; color:var(--forest); font-size:14px; text-decoration:none; display:flex; gap:4px; align-items:center; cursor:pointer;">
+                                Change location
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="derm-filter-bar" style="display:flex; gap:8px; overflow-x:auto; padding:12px 0; scrollbar-width:none; margin-bottom: 16px;">
+                        <button class="derm-filter-pill active" data-filter="all">All</button>
+                        <button class="derm-filter-pill" data-filter="highest_rated">Highest Rated</button>
+                        <button class="derm-filter-pill" data-filter="open_now">Open Now</button>
+                        <button class="derm-filter-pill" data-filter="most_reviewed">Most Reviewed</button>
+                    </div>
+
+                    <div id="dermResultsContainer" class="derm-grid">
+                        <!-- Filled dynamically by initDerm() in app.js -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── SETTINGS PAGE ── -->
+            <section class="page" id="page-settings">
+                <div class="page-inner">
+                    <div class="page-header">
+                        <h2 class="page-title">Settings ⚙️</h2>
+                        <p class="page-subtitle">Customize your GlowGuide experience</p>
+                    </div>
+
+                    <div class="settings-sections">
+                        <!-- Account Section -->
+                        <div class="home-card full-width-card settings-card">
+                            <h3 class="home-card-title">Account</h3>
+                            <div class="settings-account-header"
+                                style="display:flex; align-items:center; gap:16px; margin-top:16px;">
+                                <div id="settingsAvatar"
+                                    style="width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:20px; font-weight:600;">
+                                </div>
+                                <div style="flex:1;">
+                                    <input type="text" id="settingsName" class="form-input" placeholder="Display Name"
+                                        style="margin-bottom:8px">
+                                    <div class="form-input" id="settingsEmail" style="opacity:0.6; cursor:not-allowed">
+                                        email@example.com</div>
+                                </div>
+                            </div>
+                            <button class="secondary-btn" id="settingsChangePwdBtn"
+                                style="margin-top:16px; width:100%; display:none">Reset Password</button>
+                            <button class="cta-btn" id="settingsSaveAccountBtn" style="margin-top:8px; width:100%">Save
+                                Profile Details</button>
+                        </div>
+
+                        <!-- Preferences Section -->
+                        <div class="home-card full-width-card settings-card">
+                            <h3 class="home-card-title">Preferences</h3>
+
+                            <div class="form-group" style="margin-top:16px">
+                                <label class="form-label">AI Consultation Model</label>
+                                <select id="settingsAiModel" class="form-input">
+                                    <option value="v1">Glow V1</option>
+                                    <option value="premium">Glow Premium (Pro Only)</option>
+                                </select>
+                            </div>
+
+                            <div class="reminder-toggle-row" style="margin-top:16px">
+                                <label class="toggle-label">Water Tracker Units</label>
+                                <div class="auth-tabs" style="margin:0; width:140px">
+                                    <button class="auth-tab active" id="unitMlBtn">ml</button>
+                                    <button class="auth-tab" id="unitOzBtn">oz</button>
+                                </div>
+                            </div>
+
+                            <div class="reminder-toggle-row"
+                                style="margin-top:16px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.05)">
+                                <div>
+                                    <label class="toggle-label">Push Notifications</label>
+                                    <p class="settings-hint" id="notifStatus" style="margin-top:4px">Allow browser
+                                        notifications</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="settingsNotifToggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Data & Privacy -->
+                        <div class="home-card full-width-card settings-card">
+                            <h3 class="home-card-title">Data & Privacy</h3>
+                            <p class="settings-hint" style="margin-top:8px; margin-bottom:16px">Manage your personal
+                                data stored in GlowGuide</p>
+
+                            <button class="secondary-btn" id="settingsExportBtn" style="width:100%; margin-bottom:8px">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2"
+                                    style="margin-right:8px; display:inline-block; vertical-align:middle">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                Export My Data
+                            </button>
+                            <button class="danger-btn" id="settingsClearBtn" style="width:100%; margin-bottom:8px">Clear
+                                Consultation History</button>
+                            <button class="danger-btn" id="settingsDeleteBtn"
+                                style="width:100%; background:transparent; border:1px solid rgba(255,107,107,0.3); color:#ff6b6b">Delete
+                                Account</button>
+                        </div>
+
+                        <!-- About -->
+                        <div class="home-card full-width-card settings-card" style="text-align:center">
+                            <div class="auth-logo-mark" style="width:32px; height:32px; margin:0 auto 12px auto">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c1.5 0 3-.3 4.3-.9-.8-1.8-2-5.5.7-8.2 2.7-2.7 6.4-1.5 8.2-.7.6-1.3.9-2.8.9-4.3 0-5.5-4.5-10-10-10z"
+                                        fill="currentColor" />
+                                </svg>
+                            </div>
+                            <h3 class="home-card-title">GlowGuide</h3>
+                            <p class="settings-hint">Version 1.2.0</p>
+                            <div style="margin-top:16px; display:flex; justify-content:center; gap:16px">
+                                <a href="#tos" class="card-link-btn"
+                                    style="background:none; border:none; color:var(--gold); text-decoration:underline;">Terms
+                                    of Service</a>
+                                <a href="#privacy" class="card-link-btn"
+                                    style="background:none; border:none; color:var(--gold); text-decoration:underline;">Privacy
+                                    Policy</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main><!-- /main-content -->
+
+    </div><!-- /app-shell -->
+
+    <!-- ══════════════════════════════════════
+     FLOATING AI BUTTON
+══════════════════════════════════════ -->
+    <button class="ai-float-btn" id="aiFloatBtn" title="Talk to GlowGuide AI">
+        <div class="ai-float-ring"></div>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" class="ai-float-icon" id="aiFloatIcon">
+            <path d="M12 2l1.09 3.26L16 6l-2.91 2.09L14 11l-2-1.5L10 11l.91-2.91L8 6l2.91-.74L12 2z" fill="currentColor"
+                opacity="0.9" />
+            <path d="M5 12.5l.6 1.8L7.5 15l-1.9 1.1.5 2-1.6-1.2L2.9 18l.5-2L2 14.7l2-.2L5 12.5z" fill="currentColor"
+                opacity="0.7" />
+            <path d="M19 12.5l.6 1.8 1.9.7-1.6 1.1.5 2-1.6-1.2-1.6 1.2.5-2-1.6-1.1 1.9-.7.6-1.8z" fill="currentColor"
+                opacity="0.7" />
+        </svg>
+        <span class="ai-float-tooltip">Talk to GlowGuide AI</span>
+        <div class="ai-notif-dot" id="aiNotifDot" style="display:none"></div>
+    </button>
+
+    <!-- ══════════════════════════════════════
+     AI DRAWER
+══════════════════════════════════════ -->
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <aside class="ai-drawer" id="aiDrawer">
+        <div class="drawer-header">
+            <div class="drawer-title-wrap">
+                <div class="drawer-logo-mark">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c1.5 0 3-.3 4.3-.9-.8-1.8-2-5.5.7-8.2 2.7-2.7 6.4-1.5 8.2-.7.6-1.3.9-2.8.9-4.3 0-5.5-4.5-10-10-10z"
+                            fill="currentColor" />
+                    </svg>
+                </div>
+                <div>
+                    <h2 class="drawer-title">GlowGuide AI</h2>
+                    <div class="drawer-provider" id="drawerProvider">
+                        <span class="badge-dot"></span>
+                        <span id="drawerProviderText">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="drawer-header-actions">
+                <div class="provider-toggle">
+                    <label class="toggle-switch small">
+                        <input type="checkbox" id="providerToggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <button class="drawer-start-over" id="startOverBtn" title="Start new consultation">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="1 4 1 10 7 10" />
+                        <path d="M3.51 15a9 9 0 1 0 .49-3.61" />
+                    </svg>
+                    New
+                </button>
+                <button class="drawer-close" id="drawerCloseBtn" title="Close">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Chat Area -->
+        <div class="drawer-chat-area" id="chatArea">
+            <div class="drawer-chat-messages" id="chatMessages">
+                <!-- Welcome State -->
+                <div class="welcome-state" id="welcomeState">
+                    <div class="welcome-illustration">
+                        <svg width="120" height="140" viewBox="0 0 180 200" fill="none">
+                            <path d="M90 200 Q90 140 90 80" stroke="#C9A84C" stroke-width="1.5"
+                                stroke-linecap="round" />
+                            <path d="M90 120 Q110 105 125 90 Q108 100 90 108" stroke="#C9A84C" stroke-width="1.5"
+                                fill="none" stroke-linecap="round" />
+                            <path d="M90 140 Q70 125 55 110 Q72 120 90 128" stroke="#C9A84C" stroke-width="1.5"
+                                fill="none" stroke-linecap="round" />
+                            <path d="M60 200 Q58 160 50 110" stroke="#C9A84C" stroke-width="1" stroke-linecap="round"
+                                opacity="0.6" />
+                            <path d="M55 145 Q38 135 28 120 Q42 130 55 138" stroke="#C9A84C" stroke-width="1"
+                                fill="none" stroke-linecap="round" opacity="0.6" />
+                            <path d="M120 200 Q122 160 130 110" stroke="#C9A84C" stroke-width="1" stroke-linecap="round"
+                                opacity="0.6" />
+                            <path d="M125 145 Q142 135 152 120 Q138 130 125 138" stroke="#C9A84C" stroke-width="1"
+                                fill="none" stroke-linecap="round" opacity="0.6" />
+                            <circle cx="90" cy="75" r="5" stroke="#C9A84C" stroke-width="1.5" fill="none" />
+                            <circle cx="90" cy="75" r="2" fill="#C9A84C" opacity="0.5" />
+                        </svg>
+                    </div>
+                    <h3 class="welcome-greeting" id="welcomeGreeting">Good evening</h3>
+                    <p class="welcome-subtitle">Ready to build your perfect skincare routine?</p>
+                    <div class="quick-start-chips">
+                        <button class="quick-chip" data-prompt="Let's start my skin consultation">Begin
+                            Consultation</button>
+                        <button class="quick-chip" data-prompt="I'd like to analyze my skin photo">Analyze Skin
+                            Photo</button>
+                        <button class="quick-chip"
+                            data-prompt="What supplements should I take for better skin?">Supplement Guide</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Bar -->
+        <div class="drawer-input-bar">
+            <!-- Upload Previews -->
+            <div class="upload-previews" id="uploadPreviews">
+                <div class="image-preview" id="imagePreview" style="display:none">
+                    <img id="previewImg" src="" alt="Preview">
+                    <button class="remove-btn" id="removeImage">×</button>
+                </div>
+                <div class="pdf-preview" id="pdfPreview" style="display:none">
+                    <span class="pdf-icon">📄</span>
+                    <span class="pdf-name" id="pdfName"></span>
+                    <button class="remove-btn" id="removePdf">×</button>
+                </div>
+            </div>
+            <!-- Input Container -->
+            <div class="input-container">
+                <div class="input-actions-left">
+                    <label class="input-action-btn" title="Upload skin photo">
+                        <input type="file" id="imageInput" accept=".jpg,.jpeg,.png,.webp" hidden>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <circle cx="8.5" cy="8.5" r="1.5" />
+                            <polyline points="21 15 16 10 5 21" />
+                        </svg>
+                    </label>
+                    <label class="input-action-btn" title="Upload medical report (PDF)">
+                        <input type="file" id="pdfInput" accept=".pdf" hidden>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                        </svg>
+                    </label>
+                </div>
+                <div class="text-input-wrapper">
+                    <textarea id="messageInput" placeholder="Ask about skincare, upload a photo..." rows="1"></textarea>
+                </div>
+                <button class="send-btn" id="sendBtn" title="Send">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13" />
+                        <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display:none">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Analyzing...</p>
+        </div>
+    </div>
+
+    <!-- Migration Toast -->
+    <div class="migration-toast" id="migrationToast" style="display:none">
+        <div class="migration-toast-content">
+            <div class="migration-toast-icon">💾</div>
+            <div class="migration-toast-text">
+                <strong>Previous session found</strong>
+                <span>Save your chat history &amp; water data to your account?</span>
+            </div>
+            <div class="migration-toast-actions">
+                <button class="migration-yes" id="migrationYesBtn">Save it</button>
+                <button class="migration-no" id="migrationNoBtn">Dismiss</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Save-to-account toast (shown after migration) -->
+    <div class="toast" id="saveToast" style="display:none">Changes saved automatically</div>
+
+    <!-- Booking Modal -->
+    <div class="drawer-backdrop" id="bookingModalBackdrop" style="display:none; z-index: 2000;"></div>
+    <div class="booking-modal" id="bookingModal" style="display:none; z-index: 2001;">
+        <div class="booking-modal-header" style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:20px;">
+            <div style="display:flex; gap:16px; align-items:center;">
+                <div id="bookingModalPhoto" style="width:60px; height:60px; border-radius:12px; background:var(--forest); display:flex; align-items:center; justify-content:center; color:white; font-size:24px; font-family:var(--font-heading);"></div>
+                <div>
+                    <h3 id="bookingModalName" style="font-family:var(--font-heading); font-size:20px; color:var(--forest); margin-bottom:4px;">Doctor Name</h3>
+                    <span style="font-size:12px; background:rgba(201,168,76,0.15); color:var(--forest); padding:2px 8px; border-radius:12px; font-weight:600;">Dermatologist</span>
+                </div>
+            </div>
+            <button id="bookingModalClose" style="background:none; border:none; padding:4px; cursor:pointer;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="booking-modal-body">
+            <p style="font-weight:600; margin-bottom:16px; color:var(--forest);">How would you like to book?</p>
+            
+            <a id="bookingModalWebsite" href="#" target="_blank" class="booking-option-btn primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                Visit their website
+            </a>
+
+            <a id="bookingModalPhoneWrap" href="#" class="booking-option-btn outline">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <div style="display:flex; flex-direction:column; text-align:left; line-height:1.2;">
+                    <span>Call to book</span>
+                    <span id="bookingModalPhoneText" style="font-size:12px; opacity:0.7;"></span>
+                </div>
+            </a>
+
+            <a id="bookingModalDirections" href="#" target="_blank" class="booking-option-btn outline">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+                Get directions (Maps)
+            </a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="router.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

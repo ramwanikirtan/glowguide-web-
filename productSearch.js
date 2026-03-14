@@ -1,112 +1,165 @@
-require('dotenv').config();
-const axios = require('axios');
+// productSearch.js
+// Primary:  Curated product database (data/curated-products.json) — always reliable
+// Fallback: DuckDuckGo HTML search — no API key needed
 
-const SERP_API_KEY = process.env.SERP_API_KEY;
-
-/**
- * Search for skincare products using SerpAPI Google Shopping
- * @param {string} productType - e.g. "gentle gel cleanser for acne"
- * @param {string} budget - "low" / "medium" / "high"
- * @param {string} country - e.g. "Pakistan", "USA", "UK"
- * @param {string} skinConcern - e.g. "acne", "dryness"
- * @param {string} city - e.g. "Karachi", "New York"
- * @returns {Promise<Array>} Array of product objects
- */
-async function searchProducts(productType, budget = 'medium', country = 'USA', skinConcern = '', city = '') {
-    try {
-        if (!SERP_API_KEY || SERP_API_KEY === 'your_serpapi_key_here') {
-            console.warn('SERP_API_KEY not configured');
-            return [];
-        }
-
-        // Build location string
-        const locationStr = city ? `${city} ${country}` : country;
-
-        // Build search query
-        const searchQuery = `best ${productType} for ${skinConcern} available in ${locationStr} buy online`.trim();
-
-        // Map country names to gl codes for SerpAPI
-        const countryToGl = {
-            'USA': 'us',
-            'United States': 'us',
-            'UK': 'uk',
-            'United Kingdom': 'uk',
-            'Pakistan': 'pk',
-            'India': 'in',
-            'Canada': 'ca',
-            'Australia': 'au',
-            'Germany': 'de',
-            'France': 'fr',
-            'UAE': 'ae',
-            'United Arab Emirates': 'ae',
-            'Saudi Arabia': 'sa',
-            'Singapore': 'sg',
-            'Malaysia': 'my'
-        };
-        const glCode = countryToGl[country] || 'us';
-
-        // Call SerpAPI Google Shopping endpoint
-        const response = await axios.get('https://serpapi.com/search.json', {
-            params: {
-                engine: 'google_shopping',
-                q: searchQuery,
-                api_key: SERP_API_KEY,
-                num: 5,
-                gl: glCode
-            }
-        });
-
-        const shoppingResults = response.data.shopping_results || [];
-
-        // Parse price from string to number
-        const parsePrice = (priceStr) => {
-            if (!priceStr) return null;
-            const match = priceStr.match(/[\d,]+\.?\d*/);
-            if (match) {
-                return parseFloat(match[0].replace(',', ''));
-            }
-            return null;
-        };
-
-        // Filter by budget
-        const filterByBudget = (products) => {
-            return products.filter(product => {
-                const price = parsePrice(product.price);
-                if (price === null) return true; // Include if price unknown
-
-                switch (budget.toLowerCase()) {
-                    case 'low':
-                        return price < 15;
-                    case 'medium':
-                        return price >= 15 && price <= 50;
-                    case 'high':
-                        return true; // No filter for high budget
-                    default:
-                        return true;
-                }
-            });
-        };
-
-        // Map results to standardized format
-        const mappedResults = shoppingResults.map(item => ({
-            name: item.title || 'Unknown Product',
-            price: item.price || 'Price not available',
-            rating: item.rating || null,
-            reviews: item.reviews || null,
-            link: item.link || item.product_link || null,
-            source: item.source || 'Unknown Store',
-            thumbnail: item.thumbnail || null
-        }));
-
-        // Filter by budget and limit to 5 results
-        const filteredResults = filterByBudget(mappedResults).slice(0, 5);
-
-        return filteredResults;
-
-    } catch (error) {
-        console.error('Product search error:', error.message);
-        return [];
-    }
+const path = require('path');
+let curatedDB = {};
+try {
+    curatedDB = require(path.join(__dirname, 'data', 'curated-products.json'));
+} catch (e) {
+    console.warn('[productSearch] curated-products.json not found:', e.message);
 }
 
-module.exports = { searchProducts };
+// ── Budget filter ─────────────────────────────────────────────
+const BUDGET_MAP = {
+    'Under €20 — drugstore only':   ['budget'],
+    '€20–60 — mid-range brands':    ['budget', 'mid-range'],
+    '€60–150 — premium brands':     ['budget', 'mid-range', 'premium'],
+    'No limit — recommend the best':['budget', 'mid-range', 'premium', 'luxury'],
+    // legacy values
+    low:    ['budget'],
+    medium: ['budget', 'mid-range'],
+    high:   ['budget', 'mid-range', 'premium', 'luxury']
+};
+
+function filterByBudget(products, budget) {
+    const allowed = BUDGET_MAP[budget] || BUDGET_MAP['medium'];
+    const filtered = products.filter(p => allowed.includes(p.priceRange));
+    return filtered.length > 0 ? filtered : products;
+}
+
+// ── Alias map for common ingredient/step names ───────────────
+const INGREDIENT_ALIASES = {
+    'cleanser': ['face wash', 'Cleanser'],
+    'face wash': ['Cleanser', 'face wash'],
+    'gentle cleanser': ['face wash', 'Cleanser'],
+    'gel cleanser': ['face wash', 'Cleanser'],
+    'foaming cleanser': ['Cleanser', 'face wash'],
+    'cream cleanser': ['face wash', 'Cleanser'],
+    'spf': ['SPF Sunscreen', 'Zinc Oxide'],
+    'sunscreen': ['SPF Sunscreen', 'Zinc Oxide'],
+    'sun protection': ['SPF Sunscreen', 'Zinc Oxide'],
+    'broad spectrum': ['SPF Sunscreen', 'Zinc Oxide'],
+    'uv protection': ['SPF Sunscreen', 'Zinc Oxide'],
+    'moisturizer': ['Hyaluronic Acid', 'Ceramides'],
+    'moisturiser': ['Hyaluronic Acid', 'Ceramides'],
+};
+
+// ── Curated DB lookup ─────────────────────────────────────────
+function getCuratedProducts(ingredient, budget, skinType) {
+    const keys = Object.keys(curatedDB);
+    const needle = (ingredient || '').toLowerCase();
+
+    // 1. Exact match
+    let products = curatedDB[ingredient] || [];
+
+    // 2. Fuzzy match (substring in either direction)
+    if (!products.length) {
+        const key = keys.find(k =>
+            k.toLowerCase().includes(needle) ||
+            needle.includes(k.toLowerCase())
+        );
+        products = curatedDB[key] || [];
+    }
+
+    // 3. Alias lookup — map common names to curated DB keys
+    if (!products.length) {
+        for (const [alias, dbKeys] of Object.entries(INGREDIENT_ALIASES)) {
+            if (needle.includes(alias)) {
+                for (const dk of dbKeys) {
+                    products = curatedDB[dk] || [];
+                    if (products.length) break;
+                }
+                if (products.length) break;
+            }
+        }
+    }
+
+    // 3. Filter by skin type if provided (skip if "all" or no match found)
+    if (skinType && products.length > 0) {
+        const st = skinType.toLowerCase();
+        const skinFiltered = products.filter(p =>
+            !p.bestFor || p.bestFor.some(b => b === 'all_types' || b === 'all' || b.toLowerCase() === st)
+        );
+        if (skinFiltered.length > 0) products = skinFiltered;
+    }
+
+    // 4. Filter by budget
+    if (budget) products = filterByBudget(products, budget);
+
+    // Sort by rating descending, cap at 3
+    return [...products]
+        .sort((a, b) => (b.rating || 0) - (a.rating || 0))
+        .slice(0, 3);
+}
+
+// ── Extract ingredient keyword from a freeform query ──────────
+function extractIngredient(query) {
+    if (!query) return '';
+    const keys = Object.keys(curatedDB);
+    // Check longest match first to avoid "Acid" matching "Glycolic Acid" prematurely
+    const sortedKeys = keys.slice().sort((a, b) => b.length - a.length);
+    const match = sortedKeys.find(k => query.toLowerCase().includes(k.toLowerCase()));
+    return match || query.split(' ').slice(0, 3).join(' ');
+}
+
+// ── DuckDuckGo fallback ───────────────────────────────────────
+function extractDomain(url) {
+    try { return new URL(url).hostname.replace(/^www\./, ''); } catch { return url; }
+}
+
+function parseDDGResults(html) {
+    const results = [];
+    const titleRe   = /class="result__title"[^>]*><a[^>]*href="([^"]+)"[^>]*>([^<]+)/g;
+    const snippetRe = /class="result__snippet"[^>]*>([^<]+)/g;
+    const titles = [], snippets = [];
+    let m;
+    while ((m = titleRe.exec(html))   !== null) titles.push({ url: m[1], title: m[2].trim() });
+    while ((m = snippetRe.exec(html)) !== null) snippets.push(m[1].trim());
+    titles.forEach((t, i) => {
+        if (t.url && t.title) {
+            results.push({ name: t.title, url: t.url, description: snippets[i] || '', source: extractDomain(t.url) });
+        }
+    });
+    return results;
+}
+
+async function searchDDG(query) {
+    const url = 'https://html.duckduckgo.com/html/?q=' + encodeURIComponent(query + ' skincare product buy');
+    const res = await fetch(url, {
+        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; GlowGuide/1.0)', 'Accept': 'text/html' }
+    });
+    const html = await res.text();
+    return parseDDGResults(html);
+}
+
+// ── Main export ───────────────────────────────────────────────
+/**
+ * @param {string} productType  - e.g. "gentle gel cleanser with Salicylic Acid"
+ * @param {string} budget       - budget tier or intake Q5 answer string
+ * @param {string} country      - e.g. "USA", "Germany"
+ * @param {string} skinConcern  - e.g. "acne", "oily"
+ * @param {string} city         - e.g. "New York"
+ * @returns {Promise<Array>}
+ */
+async function searchProducts(productType, budget = 'medium', country = 'USA', skinConcern = '', city = '') {
+    // 1. Try curated database first (always fast + reliable)
+    const ingredient = extractIngredient(productType);
+    const curated = getCuratedProducts(ingredient, budget, skinConcern);
+    if (curated.length > 0) return curated;
+
+    // 2. DuckDuckGo fallback
+    try {
+        const locationStr = city ? `${city}, ${country}` : country;
+        const query = ['best', productType, skinConcern ? 'for ' + skinConcern : '', locationStr ? 'in ' + locationStr : '']
+            .filter(Boolean).join(' ');
+        const ddgResults = await searchDDG(query);
+        if (ddgResults.length > 0) return ddgResults.slice(0, 4);
+    } catch (e) {
+        console.warn('[productSearch] DDG fallback failed:', e.message);
+    }
+
+    return [];
+}
+
+module.exports = { searchProducts, getCuratedProducts, filterByBudget };

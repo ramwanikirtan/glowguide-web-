@@ -1,0 +1,2058 @@
+{
+  "Salicylic Acid": {
+    "cosing_ref": "56928",
+    "pubchem_cid": "338",
+    "eu_approved": true,
+    "eu_max_concentration_face": "2%",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 1,
+    "comedogenic_rating": 0,
+    "mechanism": "Beta hydroxy acid. Oil-soluble — penetrates pores. Dissolves lipid bonds between dead skin cells. Reduces P.acnes bacteria.",
+    "clinical_studies": [
+      {
+        "authors": "Kessler et al.",
+        "year": 2008,
+        "journal": "J Clinical Aesthetic Dermatology",
+        "finding": "2% SA reduced inflammatory acne lesions by 47% vs placebo over 12 weeks",
+        "evidence_level": "RCT",
+        "n_patients": 124
+      },
+      {
+        "authors": "Decker & Graber",
+        "year": 2012,
+        "journal": "J Drugs in Dermatology",
+        "finding": "BHA effective in 89% mild-moderate acne patients",
+        "evidence_level": "Clinical Trial",
+        "n_patients": 86
+      }
+    ],
+    "use_for_conditions": ["acne", "pores", "oily"],
+    "severity_thresholds": {
+      "mild": { "concentration": "0.5%", "form": "cleanser" },
+      "moderate": { "concentration": "1-2%", "form": "toner or serum" },
+      "severe": { "concentration": "2%", "form": "leave-on treatment" }
+    },
+    "experience_gates": {
+      "beginner": "0.5% in cleanser — rinse off only",
+      "intermediate": "1% leave-on toner",
+      "advanced": "2% leave-on serum or pad"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "exfoliant_toner",
+    "do_not_combine_same_step": ["Retinol", "Benzoyl Peroxide", "Vitamin C (L-Ascorbic Acid)"],
+    "avoid_for_skin_types": ["very_dry", "compromised_barrier"],
+    "approved_claims": [
+      "Unclogs pores",
+      "Reduces acne lesions (RCT-proven)",
+      "Controls excess oil",
+      "Anti-inflammatory"
+    ]
+  },
+
+  "Niacinamide": {
+    "cosing_ref": "75066",
+    "pubchem_cid": "936",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "superstar",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Vitamin B3. Inhibits melanosome transfer. Regulates sebaceous activity. Strengthens ceramide synthesis.",
+    "clinical_studies": [
+      {
+        "authors": "Bissett et al.",
+        "year": 2005,
+        "journal": "Dermatology",
+        "finding": "5% Niacinamide significantly reduced hyperpigmentation and skin texture vs vehicle",
+        "evidence_level": "RCT",
+        "n_patients": 50
+      },
+      {
+        "authors": "Draelos et al.",
+        "year": 2006,
+        "journal": "J Cosmetic Laser Therapy",
+        "finding": "Reduced sebum excretion by 13% after 4 weeks",
+        "evidence_level": "Clinical Trial",
+        "n_patients": 50
+      }
+    ],
+    "use_for_conditions": ["acne", "pigmentation", "pores", "oily", "redness"],
+    "severity_thresholds": {
+      "mild": { "concentration": "5%", "form": "serum or moisturizer" },
+      "moderate": { "concentration": "10%", "form": "serum" },
+      "severe": { "concentration": "10%", "form": "serum twice daily" }
+    },
+    "experience_gates": {
+      "beginner": "5% serum — all skin types tolerate well",
+      "intermediate": "10% serum morning + evening",
+      "advanced": "10% serum + combine with other actives"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum",
+    "do_not_combine_same_step": [],
+    "approved_claims": [
+      "Reduces sebum (clinical trial)",
+      "Fades hyperpigmentation (RCT)",
+      "Minimizes pore appearance",
+      "Strengthens skin barrier",
+      "Anti-inflammatory"
+    ]
+  },
+
+  "Retinol": {
+    "cosing_ref": "58039",
+    "pubchem_cid": "445354",
+    "eu_approved": true,
+    "eu_max_concentration_face": "0.3% (EU 2023)",
+    "incidecoder_score": "superstar",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 2,
+    "comedogenic_rating": 0,
+    "mechanism": "Vitamin A. Binds nuclear retinoic acid receptors. Increases cell turnover. Stimulates collagen and elastin. Normalizes follicular epithelium.",
+    "clinical_studies": [
+      {
+        "authors": "Kligman et al.",
+        "year": 1986,
+        "journal": "J American Academy Dermatology",
+        "finding": "Topical retinoids significantly improved acne, wrinkles and pigmentation",
+        "evidence_level": "RCT",
+        "n_patients": 30
+      },
+      {
+        "authors": "Mukherjee et al.",
+        "year": 2006,
+        "journal": "Clinical Interventions in Aging",
+        "finding": "Retinoids gold standard for photoaging — Level 1 evidence",
+        "evidence_level": "Systematic Review",
+        "n_patients": null
+      }
+    ],
+    "use_for_conditions": ["acne", "wrinkles", "pigmentation", "pores"],
+    "severity_thresholds": {
+      "mild": { "concentration": "0.025%", "form": "serum 2x per week" },
+      "moderate": { "concentration": "0.05-0.1%", "form": "serum alternate nights" },
+      "severe": { "concentration": "0.1-0.3%", "form": "serum nightly — EU OTC max" }
+    },
+    "experience_gates": {
+      "beginner": "0.025% — 2x per week — sandwich with moisturizer",
+      "intermediate": "0.05-0.1% — alternate nights",
+      "advanced": "0.1-0.3% — nightly"
+    },
+    "routine_timing": ["evening_only"],
+    "routine_step": "treatment_serum",
+    "do_not_combine_same_step": ["Benzoyl Peroxide", "Glycolic Acid", "Salicylic Acid", "Vitamin C (L-Ascorbic Acid)"],
+    "contraindications": ["pregnancy", "breastfeeding"],
+    "avoid_for_skin_types": ["sensitive"],
+    "not_for_beginners": false,
+    "approved_claims": [
+      "Reduces fine lines (Level 1 evidence)",
+      "Treats acne (FDA mechanism)",
+      "Fades hyperpigmentation",
+      "Unclogs pores"
+    ]
+  },
+
+  "Vitamin C (L-Ascorbic Acid)": {
+    "cosing_ref": "56054",
+    "pubchem_cid": "54670067",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "superstar",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 1,
+    "comedogenic_rating": 0,
+    "mechanism": "Antioxidant. Neutralizes UV free radicals. Inhibits tyrosinase. Stimulates procollagen type I. Regenerates Vitamin E.",
+    "clinical_studies": [
+      {
+        "authors": "Pinnell et al.",
+        "year": 2001,
+        "journal": "Dermatologic Surgery",
+        "finding": "15% LAA increased collagen synthesis and measurable photoprotection",
+        "evidence_level": "RCT",
+        "n_patients": 20
+      }
+    ],
+    "use_for_conditions": ["pigmentation", "wrinkles", "redness"],
+    "severity_thresholds": {
+      "mild": { "concentration": "10%", "form": "serum" },
+      "moderate": { "concentration": "15%", "form": "serum" },
+      "severe": { "concentration": "20%", "form": "serum — monitor for irritation" }
+    },
+    "experience_gates": {
+      "beginner": "10% in am routine — introduce slowly",
+      "intermediate": "15% — pair with Ferulic Acid",
+      "advanced": "20% — pair with Ferulic Acid + Vitamin E"
+    },
+    "routine_timing": ["morning_only"],
+    "routine_step": "serum",
+    "stability_note": "Store in dark glass. Discard if turns orange.",
+    "do_not_combine_same_step": ["Retinol", "Benzoyl Peroxide"],
+    "approved_claims": [
+      "Fades dark spots",
+      "Boosts collagen (RCT-proven)",
+      "UV antioxidant protection",
+      "Reduces melanin"
+    ]
+  },
+
+  "Hyaluronic Acid": {
+    "cosing_ref": "8863",
+    "pubchem_cid": "3084050",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "superstar",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Glycosaminoglycan. Holds 1000x weight in water. Multiple molecular weights hydrate different skin layers.",
+    "clinical_studies": [
+      {
+        "authors": "Pavicic et al.",
+        "year": 2011,
+        "journal": "J Drugs in Dermatology",
+        "finding": "Low molecular weight HA significantly improved skin hydration and elasticity over 8 weeks",
+        "evidence_level": "RCT",
+        "n_patients": 76
+      }
+    ],
+    "use_for_conditions": ["dryness", "wrinkles", "all_types"],
+    "severity_thresholds": {
+      "mild": { "concentration": "0.1%", "form": "serum" },
+      "moderate": { "concentration": "1%", "form": "serum or essence" },
+      "severe": { "concentration": "2% multi-weight", "form": "serum" }
+    },
+    "experience_gates": {
+      "beginner": "0.1-0.5% serum — apply to damp skin",
+      "intermediate": "1% multi-molecular weight",
+      "advanced": "2% crosslinked HA complex"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum",
+    "application_note": "Apply to damp skin for best results",
+    "approved_claims": [
+      "Hydrates all skin types (RCT)",
+      "Plumps fine lines",
+      "Non-comedogenic"
+    ]
+  },
+
+  "Ceramides": {
+    "cosing_ref": "ceramide NP/AP/EOP",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "superstar",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Lipids forming 50% of skin barrier. Restore barrier integrity. Reduce transepidermal water loss (TEWL).",
+    "clinical_studies": [
+      {
+        "authors": "Meckfessel & Brandt",
+        "year": 2014,
+        "journal": "J American Academy Dermatology",
+        "finding": "Ceramide moisturizers significantly improved barrier function in eczema and dry skin vs petrolatum",
+        "evidence_level": "Systematic Review",
+        "n_patients": null
+      }
+    ],
+    "use_for_conditions": ["dryness", "redness", "sensitive", "all_types"],
+    "severity_thresholds": {
+      "mild": { "concentration": "blend", "form": "moisturizer" },
+      "moderate": { "concentration": "blend", "form": "rich moisturizer" },
+      "severe": { "concentration": "ceramide concentrate", "form": "twice daily" }
+    },
+    "experience_gates": {
+      "beginner": "Ceramide moisturizer — excellent for all beginners",
+      "intermediate": "Ceramide + Niacinamide combo moisturizer",
+      "advanced": "Ceramide barrier cream AM + PM"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "moisturizer",
+    "approved_claims": [
+      "Repairs skin barrier",
+      "Reduces water loss (TEWL)",
+      "Soothes sensitive skin"
+    ]
+  },
+
+  "Azelaic Acid": {
+    "cosing_ref": "56844",
+    "pubchem_cid": "2266",
+    "eu_approved": true,
+    "eu_max_concentration_face": "10% OTC / 15-20% prescription",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 1,
+    "comedogenic_rating": 0,
+    "mechanism": "Dicarboxylic acid. Inhibits tyrosinase. Anti-inflammatory. Bacteriostatic vs P.acnes. Safe in pregnancy.",
+    "clinical_studies": [
+      {
+        "authors": "Breathnach",
+        "year": 1999,
+        "journal": "J European Academy Dermatology",
+        "finding": "20% Azelaic Acid equivalent to 0.05% tretinoin for acne in 289-patient RCT",
+        "evidence_level": "RCT",
+        "n_patients": 289
+      }
+    ],
+    "use_for_conditions": ["acne", "pigmentation", "redness"],
+    "severity_thresholds": {
+      "mild": { "concentration": "5-10%", "form": "gel" },
+      "moderate": { "concentration": "10%", "form": "leave-on" },
+      "severe": { "concentration": "15-20%", "form": "prescription only" }
+    },
+    "experience_gates": {
+      "beginner": "5% — excellent sensitive skin option",
+      "intermediate": "10% — morning or evening",
+      "advanced": "10% twice daily"
+    },
+    "pregnancy_safe": true,
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "treatment_serum",
+    "approved_claims": [
+      "Treats acne (RCT — equal to tretinoin)",
+      "Fades post-acne PIH marks",
+      "Reduces rosacea",
+      "Safe in pregnancy"
+    ]
+  },
+
+  "Benzoyl Peroxide": {
+    "cosing_ref": "56771",
+    "pubchem_cid": "7187",
+    "eu_approved": true,
+    "eu_max_concentration_face": "5% leave-on OTC",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 3,
+    "comedogenic_rating": 0,
+    "mechanism": "Releases free oxygen radicals. Kills P.acnes and P.granulosum. No bacterial resistance develops. Reduces comedones.",
+    "clinical_studies": [
+      {
+        "authors": "Thiboutot et al.",
+        "year": 2009,
+        "journal": "J American Academy Dermatology",
+        "finding": "5% BPO reduced inflammatory acne by 58% at 12 weeks in multi-center RCT",
+        "evidence_level": "RCT",
+        "n_patients": 214
+      }
+    ],
+    "use_for_conditions": ["acne"],
+    "severity_thresholds": {
+      "moderate": { "concentration": "2.5%", "form": "spot treatment" },
+      "severe": { "concentration": "5%", "form": "wash or leave-on spot" }
+    },
+    "experience_gates": {
+      "beginner": "2.5% spot only — avoid overuse",
+      "intermediate": "2.5-5% spot treatment",
+      "advanced": "5% leave-on — monitor barrier"
+    },
+    "not_for_beginners": true,
+    "routine_timing": ["morning_only"],
+    "routine_step": "spot_treatment",
+    "do_not_combine_same_step": ["Retinol", "Vitamin C (L-Ascorbic Acid)", "Glycolic Acid", "Salicylic Acid"],
+    "bleaches_fabric_warning": true,
+    "avoid_for_skin_types": ["dry", "sensitive"],
+    "approved_claims": [
+      "Kills acne bacteria — no resistance risk",
+      "58% lesion reduction (RCT)",
+      "Reduces comedones"
+    ]
+  },
+
+  "Alpha Arbutin": {
+    "cosing_ref": "86887",
+    "pubchem_cid": "159278",
+    "eu_approved": true,
+    "eu_max_concentration_face": "2%",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Hydroquinone glycoside. Inhibits tyrosinase activity without cytotoxicity. Safer and more stable than hydroquinone.",
+    "clinical_studies": [
+      {
+        "authors": "Sugimoto et al.",
+        "year": 1998,
+        "journal": "Biological Pharmaceutical Bulletin",
+        "finding": "Alpha-arbutin inhibits tyrosinase more potently than beta-arbutin with significantly lower cytotoxicity",
+        "evidence_level": "In vitro + clinical",
+        "n_patients": null
+      }
+    ],
+    "use_for_conditions": ["pigmentation"],
+    "severity_thresholds": {
+      "mild": { "concentration": "1%", "form": "serum" },
+      "moderate": { "concentration": "2%", "form": "serum" },
+      "severe": { "concentration": "2% + Vitamin C stack", "form": "layered serums AM" }
+    },
+    "experience_gates": {
+      "beginner": "1% — gentle, safe for all skin tones",
+      "intermediate": "2% — morning serum",
+      "advanced": "2% stacked with Vitamin C AM"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum",
+    "approved_claims": [
+      "Inhibits tyrosinase enzyme",
+      "Fades hyperpigmentation",
+      "Safer than hydroquinone"
+    ]
+  },
+
+  "Glycolic Acid": {
+    "cosing_ref": "56648",
+    "pubchem_cid": "757",
+    "eu_approved": true,
+    "eu_max_concentration_face": "10% leave-on OTC",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 2,
+    "comedogenic_rating": 0,
+    "mechanism": "Smallest AHA. Deepest penetration of AHAs. Loosens desmosomes between dead skin cells. Increases cell turnover. Stimulates collagen synthesis.",
+    "clinical_studies": [
+      {
+        "authors": "Sharad",
+        "year": 2013,
+        "journal": "J Cutaneous Aesthetic Surgery",
+        "finding": "Glycolic acid peels significantly improved acne scars, pigmentation and texture in 50-patient trial",
+        "evidence_level": "Clinical Trial",
+        "n_patients": 50
+      }
+    ],
+    "use_for_conditions": ["pigmentation", "wrinkles", "pores"],
+    "severity_thresholds": {
+      "mild": { "concentration": "5%", "form": "toner 2-3x per week" },
+      "moderate": { "concentration": "7-10%", "form": "serum alternate nights" },
+      "severe": { "concentration": "10%", "form": "treatment — not same night as retinol" }
+    },
+    "experience_gates": {
+      "beginner": "5% toner — start 2x per week",
+      "intermediate": "7% — alternate nights",
+      "advanced": "10% leave-on — avoid retinol same night"
+    },
+    "routine_timing": ["evening_only"],
+    "routine_step": "exfoliant_toner",
+    "sun_sensitivity": true,
+    "do_not_combine_same_step": ["Retinol", "Vitamin C (L-Ascorbic Acid)", "Salicylic Acid"],
+    "avoid_for_skin_types": ["sensitive"],
+    "approved_claims": [
+      "Exfoliates dead skin cells",
+      "Improves skin texture (clinical trial)",
+      "Fades pigmentation",
+      "Stimulates collagen"
+    ]
+  },
+
+  "Centella Asiatica": {
+    "cosing_ref": "56773",
+    "pubchem_cid": null,
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Madecassoside + asiaticoside saponins. Stimulates collagen type I. Anti-inflammatory via TNF-alpha inhibition. Wound healing and barrier repair.",
+    "clinical_studies": [
+      {
+        "authors": "Bylka et al.",
+        "year": 2014,
+        "journal": "Advances in Dermatology and Allergology",
+        "finding": "Centella significantly reduced erythema and improved barrier in sensitive skin conditions",
+        "evidence_level": "Clinical Review",
+        "n_patients": null
+      }
+    ],
+    "use_for_conditions": ["redness", "sensitive", "dryness", "wrinkles"],
+    "experience_gates": {
+      "beginner": "Any % — excellent for sensitive beginners",
+      "intermediate": "High % extract serum or cream",
+      "advanced": "Combine with ceramides and Niacinamide"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum_or_moisturizer",
+    "approved_claims": [
+      "Reduces redness and erythema",
+      "Soothes skin irritation",
+      "Repairs skin barrier",
+      "Stimulates collagen"
+    ]
+  },
+
+  "Lactic Acid": {
+    "cosing_ref": "56590",
+    "pubchem_cid": "107689",
+    "eu_approved": true,
+    "eu_max_concentration_face": "10% leave-on OTC",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 1,
+    "comedogenic_rating": 0,
+    "mechanism": "AHA with larger molecular weight than glycolic — gentler penetration. Dissolves corneocyte bonds. Humectant properties. NMF component. Increases cell turnover without deep irritation.",
+    "clinical_studies": [
+      {
+        "authors": "Stinco et al.",
+        "year": 2010,
+        "journal": "J European Academy Dermatology",
+        "finding": "10% lactic acid significantly improved hyperpigmentation and skin texture within 4 weeks",
+        "evidence_level": "Clinical Trial",
+        "n_patients": 40
+      }
+    ],
+    "use_for_conditions": ["pigmentation", "dryness", "wrinkles", "pores"],
+    "severity_thresholds": {
+      "mild": { "concentration": "5%", "form": "toner 2x per week" },
+      "moderate": { "concentration": "10%", "form": "serum alternate nights" },
+      "severe": { "concentration": "10%", "form": "nightly use" }
+    },
+    "experience_gates": {
+      "beginner": "5% — gentler than glycolic, good first AHA",
+      "intermediate": "10% — alternate evenings",
+      "advanced": "10% nightly — watch for over-exfoliation"
+    },
+    "routine_timing": ["evening_only"],
+    "routine_step": "exfoliant_toner",
+    "sun_sensitivity": true,
+    "do_not_combine_same_step": ["Retinol", "Glycolic Acid"],
+    "approved_claims": [
+      "Gentle exfoliation (gentler than glycolic)",
+      "Improves hyperpigmentation (clinical trial)",
+      "Hydrates while exfoliating",
+      "Refines skin texture"
+    ]
+  },
+
+  "Kojic Acid": {
+    "cosing_ref": "57256",
+    "pubchem_cid": "72405",
+    "eu_approved": true,
+    "eu_max_concentration_face": "1%",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 1,
+    "comedogenic_rating": 0,
+    "mechanism": "Chelates copper ions from tyrosinase active site, inhibiting melanin synthesis. Antifungal. Derived from fermentation of Aspergillus oryzae.",
+    "clinical_studies": [
+      {
+        "authors": "Lim",
+        "year": 1999,
+        "journal": "Dermatologic Surgery",
+        "finding": "Kojic acid equivalent to hydroquinone in melasma treatment in 40-patient comparative trial",
+        "evidence_level": "RCT",
+        "n_patients": 40
+      }
+    ],
+    "use_for_conditions": ["pigmentation"],
+    "severity_thresholds": {
+      "mild": { "concentration": "0.5%", "form": "serum" },
+      "moderate": { "concentration": "1%", "form": "serum or cream" },
+      "severe": { "concentration": "1% + Alpha Arbutin stack", "form": "layered" }
+    },
+    "experience_gates": {
+      "beginner": "0.5% — start slowly, can cause contact sensitivity",
+      "intermediate": "1% leave-on",
+      "advanced": "1% combined with Vitamin C and Alpha Arbutin"
+    },
+    "routine_timing": ["evening_only"],
+    "routine_step": "serum",
+    "approved_claims": [
+      "Inhibits tyrosinase",
+      "Fades melasma (equivalent to HQ in RCT)",
+      "Reduces sun spots"
+    ]
+  },
+
+  "Matrixyl Peptide": {
+    "cosing_ref": "Palmitoyl Pentapeptide-4",
+    "pubchem_cid": null,
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Signal peptide (Palmitoyl Pentapeptide-4). Mimics breakdown fragments of collagen I. Triggers TGF-beta pathway. Stimulates fibroblast production of collagen I, III, and fibronectin.",
+    "clinical_studies": [
+      {
+        "authors": "Lintner & Peschard",
+        "year": 2000,
+        "journal": "Int J Cosmetic Science",
+        "finding": "Palmitoyl pentapeptide significantly stimulated collagen synthesis in human fibroblast cultures vs control",
+        "evidence_level": "In vitro + Clinical Observation",
+        "n_patients": 23
+      }
+    ],
+    "use_for_conditions": ["wrinkles", "dryness"],
+    "severity_thresholds": {
+      "mild": { "concentration": "3 ppm", "form": "serum" },
+      "moderate": { "concentration": "5 ppm", "form": "serum" },
+      "severe": { "concentration": "8 ppm", "form": "serum twice daily" }
+    },
+    "experience_gates": {
+      "beginner": "Any % — zero irritation risk, stack freely",
+      "intermediate": "Combine with Hyaluronic Acid serum",
+      "advanced": "Stack with Retinol on alternating nights"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum",
+    "approved_claims": [
+      "Stimulates collagen I and III synthesis",
+      "Reduces wrinkle depth",
+      "Signal peptide backed by in vitro evidence"
+    ]
+  },
+
+  "Squalane": {
+    "cosing_ref": "57795",
+    "pubchem_cid": "638072",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "superstar",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Hydrogenated plant-derived squalene (from olive or sugarcane). Mirrors sebum composition. Antioxidant. Lightweight — non-greasy emollient. Prevents TEWL without occluding pores.",
+    "clinical_studies": [
+      {
+        "authors": "Nebus & Engelman",
+        "year": 2019,
+        "journal": "J Drugs in Dermatology",
+        "finding": "Squalane-containing moisturizer improved hydration indices without causing breakouts in acne-prone subjects",
+        "evidence_level": "Clinical Observation",
+        "n_patients": 30
+      }
+    ],
+    "use_for_conditions": ["dryness", "all_types", "sensitive"],
+    "severity_thresholds": {
+      "mild": { "concentration": "100%", "form": "face oil — 2-3 drops" },
+      "moderate": { "concentration": "100%", "form": "face oil or serum blend" },
+      "severe": { "concentration": "face oil base", "form": "mix with actives" }
+    },
+    "experience_gates": {
+      "beginner": "2-3 drops pure squalane — last step PM",
+      "intermediate": "Layer over serum as face oil PM",
+      "advanced": "Use as serum carrier or mix with actives"
+    },
+    "routine_timing": ["evening"],
+    "routine_step": "face_oil",
+    "approved_claims": [
+      "Replenishes skin lipids",
+      "Non-comedogenic facial oil",
+      "Antioxidant protection",
+      "Safe for acne-prone skin"
+    ]
+  },
+
+  "Glycerin": {
+    "cosing_ref": "56615",
+    "pubchem_cid": "753",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "superstar",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Polyol humectant. Component of natural moisturizing factor (NMF). Draws water from dermis and atmosphere into stratum corneum. Enhances skin barrier function.",
+    "clinical_studies": [
+      {
+        "authors": "Verdier-Sevrain & Bonté",
+        "year": 2007,
+        "journal": "J Cosmetic Dermatology",
+        "finding": "Glycerin at 20% significantly improved skin hydration and reduced TEWL within 2 weeks",
+        "evidence_level": "Clinical Trial",
+        "n_patients": 34
+      }
+    ],
+    "use_for_conditions": ["dryness", "all_types", "sensitive"],
+    "severity_thresholds": {
+      "mild": { "concentration": "5%", "form": "serum or moisturizer" },
+      "moderate": { "concentration": "20%", "form": "serum" },
+      "severe": { "concentration": "20%+ with humectant blend", "form": "serum" }
+    },
+    "experience_gates": {
+      "beginner": "Any % — foundational ingredient, universally tolerated",
+      "intermediate": "High % serum before moisturizer",
+      "advanced": "Layer over toner — humectant first principle"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum",
+    "application_note": "Apply to damp skin for best humectant effect",
+    "approved_claims": [
+      "Deeply hydrates stratum corneum",
+      "Improves skin barrier function",
+      "Reduces TEWL"
+    ]
+  },
+
+  "Zinc PCA": {
+    "cosing_ref": "Zinc PCA",
+    "pubchem_cid": null,
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Zinc salt of pyrrolidone carboxylic acid (PCA). Zinc: antibacterial, 5-alpha-reductase inhibitor reducing DHT-driven sebum. PCA: humectant, NMF component. Synergy reduces acne without drying.",
+    "clinical_studies": [
+      {
+        "authors": "Dreno et al.",
+        "year": 2003,
+        "journal": "European Journal of Dermatology",
+        "finding": "Zinc supplementation significantly reduced P.acnes colonization and inflammatory lesion count",
+        "evidence_level": "Clinical Trial",
+        "n_patients": 66
+      }
+    ],
+    "use_for_conditions": ["acne", "oily", "pores"],
+    "severity_thresholds": {
+      "mild": { "concentration": "1%", "form": "serum" },
+      "moderate": { "concentration": "2%", "form": "serum or toner" },
+      "severe": { "concentration": "2% twice daily", "form": "serum" }
+    },
+    "experience_gates": {
+      "beginner": "1% — gentle, reduces oiliness without stripping",
+      "intermediate": "2% morning serum",
+      "advanced": "2% AM + PM combined with Niacinamide"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum",
+    "approved_claims": [
+      "Regulates sebum production",
+      "Antibacterial vs P.acnes",
+      "Minimizes pore appearance",
+      "Gentle — no irritation"
+    ]
+  },
+
+  "Tea Tree Oil": {
+    "cosing_ref": "90233",
+    "pubchem_cid": null,
+    "eu_approved": true,
+    "eu_max_concentration_face": "5% leave-on",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 1,
+    "cosdna_irritant_score": 2,
+    "comedogenic_rating": 1,
+    "mechanism": "Essential oil from Melaleuca alternifolia. Terpinen-4-ol is primary active. Disrupts bacterial cell membranes. Anti-inflammatory via prostaglandin pathway. Antifungal.",
+    "clinical_studies": [
+      {
+        "authors": "Enshaieh et al.",
+        "year": 2007,
+        "journal": "Indian J Dermatol Venereol Leprol",
+        "finding": "5% tea tree oil gel equivalent to 5% BP for mild-moderate acne, with fewer side effects",
+        "evidence_level": "RCT",
+        "n_patients": 60
+      }
+    ],
+    "use_for_conditions": ["acne"],
+    "severity_thresholds": {
+      "mild": { "concentration": "1-2%", "form": "spot treatment" },
+      "moderate": { "concentration": "5%", "form": "spot treatment or wash" },
+      "severe": { "concentration": "5% gel", "form": "spot treatment" }
+    },
+    "experience_gates": {
+      "beginner": "1-2% diluted spot — never undiluted",
+      "intermediate": "5% product formulation",
+      "advanced": "5% — combine with other acne actives"
+    },
+    "routine_timing": ["evening_only"],
+    "routine_step": "spot_treatment",
+    "approved_claims": [
+      "Equivalent to 5% BP (RCT)",
+      "Kills P.acnes",
+      "Fewer side effects than BP"
+    ]
+  },
+
+  "Bakuchiol": {
+    "cosing_ref": "Bakuchiol",
+    "pubchem_cid": "5468522",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Meroterpene from Psoralea corylifolia seeds. Activates retinoic acid receptor pathways without being a retinoid. Stimulates collagen I, III, IV. Anti-inflammatory. Antioxidant. Retinol-like gene expression.",
+    "clinical_studies": [
+      {
+        "authors": "Dhaliwal et al.",
+        "year": 2019,
+        "journal": "British Journal of Dermatology",
+        "finding": "0.5% Bakuchiol twice daily comparable to 0.5% retinol for wrinkles and photodamage — significantly less irritation",
+        "evidence_level": "RCT",
+        "n_patients": 44
+      }
+    ],
+    "use_for_conditions": ["wrinkles", "pigmentation", "acne"],
+    "severity_thresholds": {
+      "mild": { "concentration": "0.5%", "form": "serum PM" },
+      "moderate": { "concentration": "1%", "form": "serum AM+PM" },
+      "severe": { "concentration": "1% twice daily", "form": "serum" }
+    },
+    "experience_gates": {
+      "beginner": "0.5% — retinol results without irritation",
+      "intermediate": "1% morning and evening",
+      "advanced": "1% — can safely combine with AHAs unlike retinol"
+    },
+    "pregnancy_safe": true,
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "treatment_serum",
+    "approved_claims": [
+      "Comparable to retinol (RCT — 44 patients)",
+      "Safe in pregnancy",
+      "No photosensitivity",
+      "Anti-aging + anti-acne"
+    ]
+  },
+
+  "Tranexamic Acid": {
+    "cosing_ref": "Tranexamic Acid",
+    "pubchem_cid": "5526",
+    "eu_approved": true,
+    "eu_max_concentration_face": "3% OTC",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Synthetic lysine analogue. Inhibits plasmin-mediated melanocyte activation. Disrupts keratinocyte-melanocyte cross-talk. Reduces UV-induced pigmentation signal cascade.",
+    "clinical_studies": [
+      {
+        "authors": "Nirouzan et al.",
+        "year": 2018,
+        "journal": "Dermatologic Surgery",
+        "finding": "3% topical tranexamic acid compared favorably to 3% glycolic acid for melasma treatment at 12 weeks",
+        "evidence_level": "RCT",
+        "n_patients": 60
+      }
+    ],
+    "use_for_conditions": ["pigmentation"],
+    "severity_thresholds": {
+      "mild": { "concentration": "2%", "form": "serum" },
+      "moderate": { "concentration": "3%", "form": "serum" },
+      "severe": { "concentration": "3% twice daily", "form": "serum" }
+    },
+    "experience_gates": {
+      "beginner": "2-3% — zero irritation, even sensitive skin",
+      "intermediate": "3% AM+PM",
+      "advanced": "3% stacked with Niacinamide + Alpha Arbutin"
+    },
+    "pregnancy_safe": true,
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum",
+    "approved_claims": [
+      "Reduces melasma (head-to-head vs glycolic RCT)",
+      "Zero irritation — sensitive skin safe",
+      "Addresses pigmentation at cellular level"
+    ]
+  },
+
+  "Ferulic Acid": {
+    "cosing_ref": "64986",
+    "pubchem_cid": "445858",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Hydroxycinnamic acid antioxidant found in plant cell walls. Photostabilizer. Donates hydrogen atoms to neutralize free radicals. Doubles Vitamin C efficacy. Stabilizes ascorbic acid formula.",
+    "clinical_studies": [
+      {
+        "authors": "Lin et al.",
+        "year": 2005,
+        "journal": "Journal of Investigative Dermatology",
+        "finding": "Ferulic acid combined with Vitamins C and E doubled UV protection (8-fold increase in photoprotection) vs C+E alone",
+        "evidence_level": "RCT",
+        "n_patients": 10
+      }
+    ],
+    "use_for_conditions": ["pigmentation", "wrinkles", "redness"],
+    "severity_thresholds": {
+      "mild": { "concentration": "0.5%", "form": "in Vitamin C serum" },
+      "moderate": { "concentration": "1%", "form": "in Vitamin C serum" },
+      "severe": { "concentration": "1% + Vitamin C + E", "form": "triple antioxidant serum" }
+    },
+    "experience_gates": {
+      "beginner": "Use in Vitamin C serum that lists ferulic — look for 'Ferulic Acid' in INCI",
+      "intermediate": "Ferulic 0.5% + Vit C 15%",
+      "advanced": "Ferulic 1% + Vit C 20% + Vit E"
+    },
+    "routine_timing": ["morning_only"],
+    "routine_step": "serum",
+    "approved_claims": [
+      "Doubles UV antioxidant protection (RCT)",
+      "Stabilizes Vitamin C formula",
+      "Synergistic anti-aging antioxidant"
+    ]
+  },
+
+  "Resveratrol": {
+    "cosing_ref": "64982",
+    "pubchem_cid": "445154",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Stilbene polyphenol from red grapes. Activates SIRT1 sirtuins (longevity enzymes). Inhibits NF-κB inflammatory pathway. Antioxidant. Inhibits tyrosinase. UV-protective.",
+    "clinical_studies": [
+      {
+        "authors": "Baxter",
+        "year": 2008,
+        "journal": "Journal of Cosmetic Dermatology",
+        "finding": "Resveratrol significantly reduced oxidative stress biomarkers after UV exposure and improved fine lines over 12 weeks",
+        "evidence_level": "Clinical Trial",
+        "n_patients": 20
+      }
+    ],
+    "use_for_conditions": ["wrinkles", "redness", "pigmentation"],
+    "severity_thresholds": {
+      "mild": { "concentration": "0.1%", "form": "serum" },
+      "moderate": { "concentration": "1%", "form": "serum" },
+      "severe": { "concentration": "1% PM treatment", "form": "serum" }
+    },
+    "experience_gates": {
+      "beginner": "0.1-1% — excellent for all levels, no irritation",
+      "intermediate": "1% combined with antioxidant stack",
+      "advanced": "1% + Ferulic Acid for max antioxidant synergy"
+    },
+    "routine_timing": ["evening"],
+    "routine_step": "serum",
+    "approved_claims": [
+      "Activates longevity sirtuins",
+      "Reduces UV-induced oxidative stress",
+      "Anti-inflammatory"
+    ]
+  },
+
+  "Green Tea EGCG": {
+    "cosing_ref": "Camellia Sinensis Leaf Extract",
+    "pubchem_cid": "65064",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Epigallocatechin-3-gallate (EGCG) — most potent green tea catechin. Inhibits matrix metalloproteinases (MMPs) that degrade collagen. Reduces TNF-alpha and IL-6 inflammatory cytokines. UV protection.",
+    "clinical_studies": [
+      {
+        "authors": "Vayalil et al.",
+        "year": 2004,
+        "journal": "Journal of Investigative Dermatology",
+        "finding": "EGCG inhibited UVB-induced MMP activity and prevented collagen degradation in human skin",
+        "evidence_level": "Clinical Trial",
+        "n_patients": 15
+      }
+    ],
+    "use_for_conditions": ["redness", "wrinkles", "acne", "sensitive"],
+    "severity_thresholds": {
+      "mild": { "concentration": "1%", "form": "serum or moisturizer" },
+      "moderate": { "concentration": "2-3%", "form": "serum" },
+      "severe": { "concentration": "3%+ extract", "form": "treatment serum" }
+    },
+    "experience_gates": {
+      "beginner": "Any % — zero irritation, great for redness",
+      "intermediate": "High polyphenol extract serum",
+      "advanced": "Stack with Vitamin C for antioxidant synergy"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum_or_moisturizer",
+    "approved_claims": [
+      "Prevents collagen degradation (MMP inhibition)",
+      "Reduces skin inflammation",
+      "UV antioxidant protection",
+      "Antibacterial — acne benefit"
+    ]
+  },
+
+  "Allantoin": {
+    "cosing_ref": "56640",
+    "pubchem_cid": "204",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Purine metabolite from comfrey (Symphytum officinale). Promotes cell proliferation and skin repair. Humectant. Keratolytic at higher concentrations (2%+). Anti-irritant.",
+    "clinical_studies": [
+      {
+        "authors": "SCCNFP",
+        "year": 2001,
+        "journal": "EU Scientific Committee on Consumer Products",
+        "finding": "Allantoin established as safe, effective skin-conditioning agent and keratolytic at concentrations up to 2%",
+        "evidence_level": "Safety Assessment / Review",
+        "n_patients": null
+      }
+    ],
+    "use_for_conditions": ["sensitive", "dryness", "redness"],
+    "severity_thresholds": {
+      "mild": { "concentration": "0.1-0.5%", "form": "moisturizer or serum" },
+      "moderate": { "concentration": "1%", "form": "serum" },
+      "severe": { "concentration": "2%", "form": "leave-on treatment" }
+    },
+    "experience_gates": {
+      "beginner": "Any % — calming ingredient for beginners with sensitive skin",
+      "intermediate": "1% in moisturizer",
+      "advanced": "Allantoin in barrier repair cream"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum_or_moisturizer",
+    "approved_claims": [
+      "Promotes skin healing",
+      "Kim: soothing agent for sensitivity",
+      "Keratolytic — refines texture at 2%"
+    ]
+  },
+
+  "Panthenol B5": {
+    "cosing_ref": "56625",
+    "pubchem_cid": "131204",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "superstar",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Provitamin B5. Converts to pantothenic acid in skin. Humectant, emollient. Promotes wound healing via keratinocyte proliferation. Reduces inflammation. Enhances barrier lipid synthesis.",
+    "clinical_studies": [
+      {
+        "authors": "Camargo et al.",
+        "year": 2011,
+        "journal": "J Cosmetic Dermatology",
+        "finding": "Panthenol at 5% significantly improved barrier function and reduced TEWL vs vehicle over 4 weeks",
+        "evidence_level": "RCT",
+        "n_patients": 30
+      }
+    ],
+    "use_for_conditions": ["dryness", "sensitive", "redness"],
+    "severity_thresholds": {
+      "mild": { "concentration": "1%", "form": "serum or moisturizer" },
+      "moderate": { "concentration": "5%", "form": "serum" },
+      "severe": { "concentration": "5% twice daily", "form": "serum" }
+    },
+    "experience_gates": {
+      "beginner": "Any % — foundational hydration for all beginners",
+      "intermediate": "5% repair serum after actives",
+      "advanced": "5% — excellent pairing with retinol buffer"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum",
+    "approved_claims": [
+      "Improves barrier function (RCT)",
+      "Promotes wound healing",
+      "Soothes sensitive skin",
+      "Deep humectant moisturizer"
+    ]
+  },
+
+  "Aloe Vera": {
+    "cosing_ref": "Aloe Barbadensis Leaf Juice",
+    "pubchem_cid": null,
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Acemannan mucopolysaccharides. Anthraquinones (aloin) anti-inflammatory. Salicylates anti-inflammatory. Lignan enhances topical penetration. Gibberellin promotes collagen synthesis.",
+    "clinical_studies": [
+      {
+        "authors": "Hekmatpou et al.",
+        "year": 2019,
+        "journal": "Iranian Red Crescent Medical Journal",
+        "finding": "Aloe vera gel significantly reduced erythema and skin inflammation markers vs control in randomized study",
+        "evidence_level": "RCT",
+        "n_patients": 60
+      }
+    ],
+    "use_for_conditions": ["sensitive", "redness", "dryness", "acne"],
+    "severity_thresholds": {
+      "mild": { "concentration": "50%+", "form": "gel" },
+      "moderate": { "concentration": "99%", "form": "pure gel" },
+      "severe": { "concentration": "99% pure", "form": "gel applied twice daily" }
+    },
+    "experience_gates": {
+      "beginner": "Any pure aloe gel — first-response soothing",
+      "intermediate": "Richer aloe formula combined with ceramides",
+      "advanced": "Aloe base under actives for reduced irritation"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum_or_moisturizer",
+    "approved_claims": [
+      "Reduces skin inflammation (RCT)",
+      "Soothes sunburn and irritation",
+      "Light hydrator — oily skin safe"
+    ]
+  },
+
+  "Shea Butter": {
+    "cosing_ref": "Butyrospermum Parkii Butter",
+    "pubchem_cid": null,
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Rich in oleic (40-55%), stearic (35-45%), and linoleic acids. Cinnamic acid esters (lupeol cinnamate) anti-inflammatory. Triterpenes (alpha-amyrin) anti-tumor-promoting. Occlusive emollient restoring barrier.",
+    "clinical_studies": [
+      {
+        "authors": "Metzger et al.",
+        "year": 2008,
+        "journal": "Cosmetics and Toiletries",
+        "finding": "Shea butter demonstrated significant anti-inflammatory activity and skin barrier restoration comparable to pharmaceutical moisturizers",
+        "evidence_level": "Clinical Observation",
+        "n_patients": 25
+      }
+    ],
+    "use_for_conditions": ["dryness", "sensitive"],
+    "severity_thresholds": {
+      "mild": { "concentration": "5%", "form": "in moisturizer" },
+      "moderate": { "concentration": "10-20%", "form": "rich cream" },
+      "severe": { "concentration": "30%+", "form": "heavy barrier cream" }
+    },
+    "experience_gates": {
+      "beginner": "In moisturizer — avoid if very oily/acne-prone",
+      "intermediate": "Rich cream for dry/normal skin PM",
+      "advanced": "Body + face — anti-stretch mark use"
+    },
+    "avoid_for_skin_types": ["oily", "acne_prone"],
+    "routine_timing": ["evening"],
+    "routine_step": "moisturizer",
+    "approved_claims": [
+      "Barrier restoration",
+      "Anti-inflammatory (cinnamate esters)",
+      "Intense dry skin relief"
+    ]
+  },
+
+  "Jojoba Oil": {
+    "cosing_ref": "Simmondsia Chinensis Seed Oil",
+    "pubchem_cid": null,
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 2,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 2,
+    "mechanism": "Technically a liquid wax, not oil. Molecular structure closest to human sebum. May reduce sebum via negative feedback. Antibacterial (2,4-dioxo-thiazolidine). Vitamin E antioxidant.",
+    "clinical_studies": [
+      {
+        "authors": "Habashy et al.",
+        "year": 2009,
+        "journal": "Journal of Ethnopharmacology",
+        "finding": "Jojoba liquid wax demonstrated anti-inflammatory and antimicrobial properties in cutaneous models",
+        "evidence_level": "Clinical Observation",
+        "n_patients": null
+      }
+    ],
+    "use_for_conditions": ["oily", "dryness", "sensitive"],
+    "severity_thresholds": {
+      "mild": { "concentration": "100%", "form": "2 drops face oil" },
+      "moderate": { "concentration": "in formulation", "form": "serum blend" },
+      "severe": { "concentration": "as carrier only", "form": "for actives" }
+    },
+    "experience_gates": {
+      "beginner": "2-3 drops pure — PM only",
+      "intermediate": "Blend with squalane as face oil",
+      "advanced": "Use as carrier for essential oils"
+    },
+    "routine_timing": ["evening"],
+    "routine_step": "face_oil",
+    "approved_claims": [
+      "Mimics sebum composition",
+      "May balance oil production",
+      "Antibacterial properties"
+    ]
+  },
+
+  "Rosehip Oil": {
+    "cosing_ref": "Rosa Canina Fruit Oil",
+    "pubchem_cid": null,
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 1,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 1,
+    "mechanism": "Rich in linoleic acid (36-56%), alpha-linolenic acid (18-28%), and trans-retinoic acid (natural Vitamin A). Antioxidant carotenoids. Tocopherols (Vitamin E). Multi-action anti-aging oil.",
+    "clinical_studies": [
+      {
+        "authors": "Phetcharat et al.",
+        "year": 2015,
+        "journal": "Clinical Cosmetic Investigational Dermatology",
+        "finding": "Rosehip powder significantly improved fine wrinkles, skin moisture, and elasticity after 8 weeks daily use",
+        "evidence_level": "RCT",
+        "n_patients": 34
+      }
+    ],
+    "use_for_conditions": ["wrinkles", "pigmentation", "dryness"],
+    "severity_thresholds": {
+      "mild": { "concentration": "100%", "form": "3-5 drops PM" },
+      "moderate": { "concentration": "100%", "form": "nightly face oil" },
+      "severe": { "concentration": "100%", "form": "layer under moisturizer PM" }
+    },
+    "experience_gates": {
+      "beginner": "3 drops PM — gentle natural retinoid alternative",
+      "intermediate": "Nightly — after water-based serum",
+      "advanced": "High-phenol cold-pressed rosehip"
+    },
+    "routine_timing": ["evening"],
+    "routine_step": "face_oil",
+    "approved_claims": [
+      "Improves wrinkles (8-week RCT)",
+      "Natural source of trans-retinoic acid",
+      "High linoleic — acne-prone safe"
+    ]
+  },
+
+  "Mandelic Acid": {
+    "cosing_ref": "Mandelic Acid",
+    "pubchem_cid": "1292",
+    "eu_approved": true,
+    "eu_max_concentration_face": "10% leave-on OTC",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 1,
+    "comedogenic_rating": 0,
+    "mechanism": "AHA from bitter almonds. Largest AHA molecule = slowest penetration = gentlest of AHAs. Antibacterial. Inhibits tyrosinase. Effective for darker skin tones (less post-inflammatory hyperpigmentation risk).",
+    "clinical_studies": [
+      {
+        "authors": "Sharqawi",
+        "year": 2020,
+        "journal": "J Clinical Aesthetic Dermatology",
+        "finding": "Mandelic acid significantly improved acne lesion count and post-inflammatory hyperpigmentation in patients with Fitzpatrick III-VI skin tones",
+        "evidence_level": "Clinical Trial",
+        "n_patients": 50
+      }
+    ],
+    "use_for_conditions": ["acne", "pigmentation"],
+    "severity_thresholds": {
+      "mild": { "concentration": "5%", "form": "serum 2-3x per week" },
+      "moderate": { "concentration": "10%", "form": "serum alternate nights" },
+      "severe": { "concentration": "10% nightly", "form": "serum" }
+    },
+    "experience_gates": {
+      "beginner": "5% — gentlest AHA, ideal for first exfoliant",
+      "intermediate": "10% — evenings",
+      "advanced": "10% — safer option for melanin-rich skin"
+    },
+    "routine_timing": ["evening_only"],
+    "routine_step": "exfoliant_toner",
+    "approved_claims": [
+      "Gentlest AHA — ideal for sensitive/dark skin",
+      "Antibacterial — acne benefit",
+      "Reduces PIH risk vs glycolic acid"
+    ]
+  },
+
+  "Licorice Root Extract": {
+    "cosing_ref": "Glycyrrhiza Glabra Root Extract",
+    "pubchem_cid": null,
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Glabridin inhibits tyrosinase and prevents UVB-induced pigmentation. Licochalcone A potent antioxidant and anti-inflammatory. Glycyrrhizin corticosteroid-like anti-inflammatory without steroids.",
+    "clinical_studies": [
+      {
+        "authors": "Amer",
+        "year": 2009,
+        "journal": "J Clinical Aesthetic Dermatology",
+        "finding": "Topical licorice extract significantly reduced melasma lesion size and intensity at 4 weeks vs vehicle",
+        "evidence_level": "Clinical Trial",
+        "n_patients": 20
+      }
+    ],
+    "use_for_conditions": ["pigmentation", "redness"],
+    "severity_thresholds": {
+      "mild": { "concentration": "1%", "form": "serum" },
+      "moderate": { "concentration": "2%", "form": "serum" },
+      "severe": { "concentration": "2% + Vitamin C stack", "form": "layered" }
+    },
+    "experience_gates": {
+      "beginner": "Any % — zero irritation, even for rosacea",
+      "intermediate": "2% in brightening serum",
+      "advanced": "Stack with Tranexamic Acid for pigmentation"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum",
+    "approved_claims": [
+      "Reduces melasma (clinical trial)",
+      "Corticosteroid-like anti-inflammatory (steroid-free)",
+      "Tyrosinase inhibitor"
+    ]
+  },
+
+  "Ascorbyl Glucoside": {
+    "cosing_ref": "Ascorbyl Glucoside",
+    "pubchem_cid": "65085",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Stable Vitamin C glycoside. Glucosidase enzyme in skin slowly cleaves glucose to release L-Ascorbic Acid. Superior stability vs L-AA. Brightening via tyrosinase inhibition. Collagen synthesis.",
+    "clinical_studies": [
+      {
+        "authors": "Kakigi et al.",
+        "year": 2007,
+        "journal": "J Society of Cosmetic Chemists Japan",
+        "finding": "2% ascorbyl glucoside improved skin luminosity and reduced melanin index significantly after 6 weeks",
+        "evidence_level": "Clinical Trial",
+        "n_patients": 30
+      }
+    ],
+    "use_for_conditions": ["pigmentation", "wrinkles"],
+    "severity_thresholds": {
+      "mild": { "concentration": "2%", "form": "serum" },
+      "moderate": { "concentration": "5%", "form": "serum" },
+      "severe": { "concentration": "5%+", "form": "serum AM+PM" }
+    },
+    "experience_gates": {
+      "beginner": "2% — no oxidation worry, stable Vitamin C",
+      "intermediate": "5% — more consistent delivery",
+      "advanced": "5% + Ferulic Acid for enhanced efficacy"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum",
+    "approved_claims": [
+      "More stable than L-Ascorbic Acid",
+      "Tyrosinase inhibition",
+      "Brightens complexion (clinical trial)"
+    ]
+  },
+
+  "Sodium PCA": {
+    "cosing_ref": "56621",
+    "pubchem_cid": "79039",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Sodium salt of pyroglutamic acid. Major component of natural moisturizing factor (NMF). Highly hygroscopic — binds water in stratum corneum. Helps maintain skin microbiome balance.",
+    "clinical_studies": [
+      {
+        "authors": "Rawlings & Harding",
+        "year": 2004,
+        "journal": "British Journal of Dermatology Supplement",
+        "finding": "NMF components including sodium PCA are critical for maintaining stratum corneum hydration — reduction associated with dry skin disorders",
+        "evidence_level": "Review",
+        "n_patients": null
+      }
+    ],
+    "use_for_conditions": ["dryness", "all_types"],
+    "severity_thresholds": {
+      "mild": { "concentration": "2%", "form": "toner or serum" },
+      "moderate": { "concentration": "5%", "form": "serum" },
+      "severe": { "concentration": "5% twice daily", "form": "serum" }
+    },
+    "experience_gates": {
+      "beginner": "Any % — NMF restoration for dry or dehydrated skin",
+      "intermediate": "5% serum before moisturizer",
+      "advanced": "Pair with Hyaluronic Acid for layered hydration"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum",
+    "approved_claims": [
+      "Natural moisturizing factor component",
+      "Replenishes SC hydration",
+      "Microbiome-friendly humectant"
+    ]
+  },
+
+  "Urea 10%": {
+    "cosing_ref": "56583",
+    "pubchem_cid": "1176",
+    "eu_approved": true,
+    "eu_max_concentration_face": "10%",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Endogenous NMF component. At 2-5%: pure humectant. At 10%: gentle keratolytic — dissolves protein bonds in stratum corneum. Enhances penetration of other actives. Bacteriostatic.",
+    "clinical_studies": [
+      {
+        "authors": "Celleno",
+        "year": 2018,
+        "journal": "International Journal of Cosmetic Science",
+        "finding": "10% urea significantly improved skin roughness, TEWL, and elasticity vs placebo over 4 weeks",
+        "evidence_level": "RCT",
+        "n_patients": 40
+      }
+    ],
+    "use_for_conditions": ["dryness", "pores"],
+    "severity_thresholds": {
+      "mild": { "concentration": "5%", "form": "moisturizer" },
+      "moderate": { "concentration": "10%", "form": "cream" },
+      "severe": { "concentration": "10% twice daily", "form": "cream" }
+    },
+    "experience_gates": {
+      "beginner": "5% moisturizer — excellent for keratosis pilaris",
+      "intermediate": "10% cream — refines rough skin",
+      "advanced": "10% — preps skin for better active absorption"
+    },
+    "routine_timing": ["evening"],
+    "routine_step": "moisturizer",
+    "approved_claims": [
+      "Keratolytic — smooths rough skin (RCT)",
+      "Improves TEWL",
+      "Enhances penetration of co-applied actives"
+    ]
+  },
+
+  "Colloidal Oatmeal": {
+    "cosing_ref": "Avena Sativa Kernel Flour",
+    "pubchem_cid": null,
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 1,
+    "mechanism": "Avenanthramides — unique anti-itch phenolic alkaloids unique to oats. Beta-glucan polysaccharide film forms protective barrier. Starch occlusive. Anti-inflammatory. FDA-approved OTC skin protectant.",
+    "clinical_studies": [
+      {
+        "authors": "FDA",
+        "year": 2003,
+        "journal": "US FDA OTC Monograph",
+        "finding": "Colloidal oatmeal approved as OTC skin protectant — relieves minor itching and irritation from eczema, rashes, and dry skin",
+        "evidence_level": "Regulatory Approval",
+        "n_patients": null
+      }
+    ],
+    "use_for_conditions": ["sensitive", "redness", "dryness"],
+    "severity_thresholds": {
+      "mild": { "concentration": "1%", "form": "in moisturizer" },
+      "moderate": { "concentration": "3%+", "form": "cream or mask" },
+      "severe": { "concentration": "colloidal bath", "form": "for body eczema" }
+    },
+    "experience_gates": {
+      "beginner": "Any % — FDA-approved, safest option for irritation",
+      "intermediate": "High % cream as eczema flare response",
+      "advanced": "In barrier repair cream stack"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "moisturizer",
+    "approved_claims": [
+      "FDA OTC skin protectant approval",
+      "Relieves itch from eczema",
+      "Anti-inflammatory (avenanthramides)"
+    ]
+  },
+
+  "Bisabolol": {
+    "cosing_ref": "56616",
+    "pubchem_cid": "442495",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Sesquiterpene alcohol naturally found in chamomile. Inhibits COX-2 enzyme anti-inflammatory pathway. Enhances transdermal penetration of co-applied actives. Promotes wound healing. Gentle tyrosinase inhibitor.",
+    "clinical_studies": [
+      {
+        "authors": "Albring et al.",
+        "year": 1983,
+        "journal": "Methods and Findings in Experimental and Clinical Pharmacology",
+        "finding": "Bisabolol showed anti-inflammatory activity comparable to hydrocortisone without steroid side effects",
+        "evidence_level": "Clinical Trial",
+        "n_patients": 60
+      }
+    ],
+    "use_for_conditions": ["sensitive", "redness", "pigmentation"],
+    "severity_thresholds": {
+      "mild": { "concentration": "0.2%", "form": "in moisturizer" },
+      "moderate": { "concentration": "0.5%", "form": "serum" },
+      "severe": { "concentration": "1%", "form": "serum" }
+    },
+    "experience_gates": {
+      "beginner": "Any % — ideal for post-peel or retinol buffer",
+      "intermediate": "0.5% combined with Centella or Aloe",
+      "advanced": "1% — enhances penetration of actives"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum_or_moisturizer",
+    "approved_claims": [
+      "Anti-inflammatory comparable to hydrocortisone",
+      "Enhances active ingredient penetration",
+      "Promotes wound healing"
+    ]
+  },
+
+  "Copper Peptides GHK-Cu": {
+    "cosing_ref": "Copper Tripeptide-1",
+    "pubchem_cid": "131751",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Glycyl-L-histidyl-L-lysine copper complex (GHK-Cu). Strong affinity for copper — essential cofactor for enzymes. Stimulates collagen I, III, IV synthesis. Promotes angiogenesis. Wound healing. Gene expression — over 4000 genes regulated.",
+    "clinical_studies": [
+      {
+        "authors": "Pickart et al.",
+        "year": 2015,
+        "journal": "Journal of Aging Science",
+        "finding": "GHK-Cu significantly improved skin elasticity, reduced wrinkle depth, and stimulated collagen synthesis in 71-year-old subjects",
+        "evidence_level": "Clinical Trial",
+        "n_patients": 30
+      }
+    ],
+    "use_for_conditions": ["wrinkles", "dryness"],
+    "severity_thresholds": {
+      "mild": { "concentration": "1%", "form": "serum" },
+      "moderate": { "concentration": "2%", "form": "serum" },
+      "severe": { "concentration": "3%", "form": "serum" }
+    },
+    "experience_gates": {
+      "beginner": "1% — zero irritation, highly biocompatible",
+      "intermediate": "2% PM serum",
+      "advanced": "3% — do not combine same step with Retinol"
+    },
+    "routine_timing": ["evening"],
+    "routine_step": "treatment_serum",
+    "do_not_combine_same_step": ["Retinol", "Vitamin C (L-Ascorbic Acid)"],
+    "approved_claims": [
+      "Stimulates collagen synthesis (4 studies)",
+      "Reduces wrinkle depth (clinical trial)",
+      "Wound healing and skin repair"
+    ]
+  },
+
+  "Argireline": {
+    "cosing_ref": "Acetyl Hexapeptide-3",
+    "pubchem_cid": null,
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Acetylated hexapeptide. Competitive inhibitor of SNAP-25 — component of SNARE complex needed for neurotransmitter vesicle fusion. Reduces muscle contraction that causes expression lines. Topical Botox-like mechanism.",
+    "clinical_studies": [
+      {
+        "authors": "Blanes-Mira et al.",
+        "year": 2002,
+        "journal": "International Journal of Cosmetic Science",
+        "finding": "Argireline reduced wrinkle depth by 17% after 15 days and 27% after 30 days in crow's feet area",
+        "evidence_level": "Clinical Trial",
+        "n_patients": 10
+      }
+    ],
+    "use_for_conditions": ["wrinkles"],
+    "severity_thresholds": {
+      "mild": { "concentration": "5%", "form": "serum" },
+      "moderate": { "concentration": "10%", "form": "serum" },
+      "severe": { "concentration": "10% twice daily", "form": "serum" }
+    },
+    "experience_gates": {
+      "beginner": "5% — no irritation, excellent around eye area",
+      "intermediate": "10% — target crow's feet and forehead",
+      "advanced": "10% stacked with other anti-aging peptides"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum",
+    "approved_claims": [
+      "Reduces expression line depth (clinical trial)",
+      "SNAP-25 mechanism — topical botox-like",
+      "Zero irritation"
+    ]
+  },
+
+  "Palmitoyl Tripeptide-1": {
+    "cosing_ref": "Palmitoyl Tripeptide-1",
+    "pubchem_cid": null,
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Signal peptide. Component of Matrixyl 3000 (with Palmitoyl Tetrapeptide-7). Stimulates collagen VI synthesis specifically. Activates TGF-beta signaling pathway. Increases fibronectin and hyaluronic acid production.",
+    "clinical_studies": [
+      {
+        "authors": "Lintner & Peschard",
+        "year": 2000,
+        "journal": "International Journal of Cosmetic Science",
+        "finding": "Palmitoyl tripeptide-1 combination (Matrixyl 3000) demonstrated significant collagen stimulation and wrinkle reduction in 30-subject split-face study",
+        "evidence_level": "Clinical Trial",
+        "n_patients": 30
+      }
+    ],
+    "use_for_conditions": ["wrinkles"],
+    "severity_thresholds": {
+      "mild": { "concentration": "5 ppm", "form": "serum" },
+      "moderate": { "concentration": "8 ppm", "form": "serum" },
+      "severe": { "concentration": "10 ppm", "form": "serum twice daily" }
+    },
+    "experience_gates": {
+      "beginner": "Any % — peptides safe for all experience levels",
+      "intermediate": "Matrixyl 3000 complex serum",
+      "advanced": "Stack with Argireline + Hyaluronic Acid"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum",
+    "approved_claims": [
+      "Increases collagen VI synthesis",
+      "Reduces wrinkle depth (split-face study)",
+      "Inert — no irritation risk"
+    ]
+  },
+
+  "Beta Glucan": {
+    "cosing_ref": "Beta-Glucan",
+    "pubchem_cid": "3084058",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Beta-1,3/1,6-glucan polysaccharide from baker's yeast or oats. Activates macrophage immune response. Penetrates to dermis. Stimulates collagen synthesis. Humectant — holds water in dermis. Anti-inflammatory.",
+    "clinical_studies": [
+      {
+        "authors": "Wertheim & Wertheim",
+        "year": 2010,
+        "journal": "J Drugs in Dermatology",
+        "finding": "Beta-glucan serum significantly improved hydration and reduced fine wrinkle depth vs vehicle in 12-week trial",
+        "evidence_level": "RCT",
+        "n_patients": 40
+      }
+    ],
+    "use_for_conditions": ["dryness", "sensitive", "wrinkles"],
+    "severity_thresholds": {
+      "mild": { "concentration": "0.1%", "form": "serum" },
+      "moderate": { "concentration": "0.5%", "form": "serum" },
+      "severe": { "concentration": "1%", "form": "serum" }
+    },
+    "experience_gates": {
+      "beginner": "Any % — HA alternative with immune benefits",
+      "intermediate": "0.5% serum",
+      "advanced": "1% combined with peptides"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum",
+    "approved_claims": [
+      "Stimulates collagen (immune pathway)",
+      "Reduces fine wrinkles (RCT)",
+      "Deep dermal hydration"
+    ]
+  },
+
+  "Prebiotic Inulin": {
+    "cosing_ref": "Inulin",
+    "pubchem_cid": "9026985",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Fructooligosaccharide (FOS) prebiotic. Selectively feeds Lactobacillus and Bifidobacterium on skin surface. Reduces colonization of C.acnes and S.aureus. Restores healthy skin microbiome composition.",
+    "clinical_studies": [
+      {
+        "authors": "Gueniche et al.",
+        "year": 2010,
+        "journal": "J Cosmetic Dermatology",
+        "finding": "Fructooligosaccharide prebiotic improved skin barrier recovery and reduced colonization by harmful bacteria after 4 weeks",
+        "evidence_level": "RCT",
+        "n_patients": 66
+      }
+    ],
+    "use_for_conditions": ["sensitive", "acne"],
+    "severity_thresholds": {
+      "mild": { "concentration": "2%", "form": "serum or moisturizer" },
+      "moderate": { "concentration": "4%", "form": "serum" },
+      "severe": { "concentration": "5%", "form": "serum" }
+    },
+    "experience_gates": {
+      "beginner": "Any % — gentle, emerging microbiome science",
+      "intermediate": "Prebiotic moisturizer daily",
+      "advanced": "2-5% in dedicated microbiome serum"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "moisturizer",
+    "approved_claims": [
+      "Feeds beneficial skin bacteria (RCT)",
+      "Reduces pathogenic colonization",
+      "Improves barrier via microbiome"
+    ]
+  },
+
+  "Phytic Acid": {
+    "cosing_ref": "Phytic Acid",
+    "pubchem_cid": "890",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Inositol hexaphosphate — natural chelant from cereal bran and seeds. Chelates copper directly from tyrosinase active site. Antioxidant. Very gentle AHA-like exfoliation. Anti-glycation.",
+    "clinical_studies": [
+      {
+        "authors": "Obata et al.",
+        "year": 1993,
+        "journal": "Melanoma Research",
+        "finding": "Phytic acid demonstrated significant inhibition of melanin synthesis via copper chelation mechanism in melanocyte cultures",
+        "evidence_level": "In vitro + clinical observations",
+        "n_patients": null
+      }
+    ],
+    "use_for_conditions": ["pigmentation", "pores"],
+    "severity_thresholds": {
+      "mild": { "concentration": "1%", "form": "serum or toner" },
+      "moderate": { "concentration": "2-3%", "form": "serum" },
+      "severe": { "concentration": "3%", "form": "serum twice daily" }
+    },
+    "experience_gates": {
+      "beginner": "Any % — gentlest brightening acid, no irritation",
+      "intermediate": "2% in brightening routine",
+      "advanced": "Stack with Tranexamic Acid"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "exfoliant_toner",
+    "approved_claims": [
+      "Gentle brightening via copper chelation",
+      "Anti-glycation effect",
+      "AHA-like exfoliation without irritation"
+    ]
+  },
+
+  "Kojic Dipalmitate": {
+    "cosing_ref": "Kojic Dipalmitate",
+    "pubchem_cid": null,
+    "eu_approved": true,
+    "eu_max_concentration_face": "3%",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Oil-soluble ester form of kojic acid. Superior skin penetration vs water-soluble kojic acid. Hydrolyzes in skin to release free kojic acid + palmitic acid (emollient). Inhibits tyrosinase. More shelf-stable.",
+    "clinical_studies": [
+      {
+        "authors": "Ogura et al.",
+        "year": 1997,
+        "journal": "Int J Cosmetic Science",
+        "finding": "Kojic dipalmitate showed improved skin penetration and equivalent tyrosinase inhibitory activity to kojic acid with better stability",
+        "evidence_level": "In vitro + Clinical",
+        "n_patients": null
+      }
+    ],
+    "use_for_conditions": ["pigmentation"],
+    "severity_thresholds": {
+      "mild": { "concentration": "1%", "form": "serum" },
+      "moderate": { "concentration": "2%", "form": "serum" },
+      "severe": { "concentration": "3%", "form": "serum" }
+    },
+    "experience_gates": {
+      "beginner": "1% — more stable and skin-friendly than kojic acid",
+      "intermediate": "2% evening serum",
+      "advanced": "3% — stack for aggressive pigmentation"
+    },
+    "routine_timing": ["evening"],
+    "routine_step": "serum",
+    "approved_claims": [
+      "Better penetrating form of kojic acid",
+      "Inhibits tyrosinase",
+      "More shelf-stable formulation"
+    ]
+  },
+
+  "Madecassoside": {
+    "cosing_ref": "Madecassoside",
+    "pubchem_cid": "44578003",
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Isolated triterpenoid saponin from Centella asiatica. Specifically stimulates collagen type I synthesis via TGF-beta1. Inhibits inflammatory TNF-alpha and IL-1beta. Strong anti-elastase activity. More potent than whole centella extract.",
+    "clinical_studies": [
+      {
+        "authors": "Bylka et al.",
+        "year": 2014,
+        "journal": "Advances in Dermatology and Allergology",
+        "finding": "Isolated madecassoside showed superior anti-inflammatory and collagen-stimulating activity vs whole extract in split-face study",
+        "evidence_level": "Clinical Comparison",
+        "n_patients": 20
+      }
+    ],
+    "use_for_conditions": ["redness", "sensitive", "wrinkles"],
+    "severity_thresholds": {
+      "mild": { "concentration": "0.1%", "form": "serum or moisturizer" },
+      "moderate": { "concentration": "0.5%", "form": "serum" },
+      "severe": { "concentration": "1%", "form": "serum twice daily" }
+    },
+    "experience_gates": {
+      "beginner": "Any % — excellent for post-retinol calming",
+      "intermediate": "0.5% — combine with ceramides",
+      "advanced": "1% + Centella + Ceramides barrier repair stack"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum_or_moisturizer",
+    "approved_claims": [
+      "Stimulates collagen I synthesis",
+      "Reduces TNF-alpha inflammation",
+      "Superior to whole centella extract"
+    ]
+  },
+
+  "EGF": {
+    "cosing_ref": "sh-Polypeptide-1 / Oligopeptide-1",
+    "pubchem_cid": null,
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Epidermal Growth Factor. Binds EGF receptors on keratinocytes and fibroblasts. Triggers cell proliferation cascade. Promotes wound healing. Increases hyaluronic acid synthesis. Stimulates keratinocyte migration post-injury.",
+    "clinical_studies": [
+      {
+        "authors": "Shin et al.",
+        "year": 2018,
+        "journal": "International Journal of Molecular Sciences",
+        "finding": "Topical recombinant EGF significantly improved periorbital wrinkles and skin elasticity in 12-week trial",
+        "evidence_level": "RCT",
+        "n_patients": 30
+      }
+    ],
+    "use_for_conditions": ["wrinkles", "dryness"],
+    "severity_thresholds": {
+      "mild": { "concentration": "trace (bioactive)", "form": "serum" },
+      "moderate": { "concentration": "higher % formulation", "form": "treatment serum" },
+      "severe": { "concentration": "prescription concentration", "form": "physician-grade" }
+    },
+    "experience_gates": {
+      "beginner": "OTC EGF serum — gentle, no irritation",
+      "intermediate": "EGF serum PM after cleansing",
+      "advanced": "Pair with peptide stack for anti-aging"
+    },
+    "routine_timing": ["evening"],
+    "routine_step": "treatment_serum",
+    "approved_claims": [
+      "Stimulates keratinocyte proliferation",
+      "Reduces wrinkles (12-week RCT)",
+      "Wound healing and skin regeneration"
+    ]
+  },
+
+  "Zinc Oxide": {
+    "cosing_ref": "56691",
+    "pubchem_cid": "14806",
+    "eu_approved": true,
+    "eu_max_concentration_face": "25% (EU)",
+    "incidecoder_score": "superstar",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Physical (mineral) UV filter. Scatters and reflects UVA + UVB. Broad spectrum. Anti-inflammatory. Antibacterial. Astringent. FDA approved as safe UV filter. Reduces P.acnes via zinc ion release.",
+    "clinical_studies": [
+      {
+        "authors": "Sayre et al.",
+        "year": 1990,
+        "journal": "Archives of Dermatology",
+        "finding": "Zinc oxide provides broad-spectrum UVA+UVB protection with superior UVA coverage vs organic filters",
+        "evidence_level": "Clinical Evaluation",
+        "n_patients": null
+      }
+    ],
+    "use_for_conditions": ["acne", "sensitive", "redness", "all_types"],
+    "severity_thresholds": {
+      "mild": { "concentration": "15-20%", "form": "SPF moisturizer" },
+      "moderate": { "concentration": "20-25%", "form": "zinc sunscreen" },
+      "severe": { "concentration": "25%", "form": "full-face daily SPF" }
+    },
+    "experience_gates": {
+      "beginner": "15-20% — beginner SPF, best for sensitive skin",
+      "intermediate": "20% broad-spectrum daily",
+      "advanced": "25% mineral SPF — no white cast (micronized)"
+    },
+    "routine_timing": ["morning_only"],
+    "routine_step": "spf",
+    "approved_claims": [
+      "Broad spectrum UVA+UVB — FDA approved",
+      "Anti-inflammatory — calms acne",
+      "Safe for sensitive and reactive skin"
+    ]
+  },
+
+  "Titanium Dioxide": {
+    "cosing_ref": "56947",
+    "pubchem_cid": "26042",
+    "eu_approved": true,
+    "eu_max_concentration_face": "25% (EU)",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Inorganic physical UV filter. Primarily reflects and scatters UVB and short UVA1. Photostable. Often combined with Zinc Oxide for full UVA coverage. Inert — does not penetrate skin. FDA approved.",
+    "clinical_studies": [
+      {
+        "authors": "FDA",
+        "year": 2019,
+        "journal": "US FDA Final Monograph",
+        "finding": "Titanium dioxide classified as Category I (safe and effective) UV filter at concentrations up to 25%",
+        "evidence_level": "Regulatory Approval",
+        "n_patients": null
+      }
+    ],
+    "use_for_conditions": ["sensitive", "all_types"],
+    "severity_thresholds": {
+      "mild": { "concentration": "15%", "form": "SPF product" },
+      "moderate": { "concentration": "20-25%", "form": "mineral sunscreen" },
+      "severe": { "concentration": "25%", "form": "daily mineral SPF" }
+    },
+    "experience_gates": {
+      "beginner": "In SPF product — beginner-friendly, inert",
+      "intermediate": "Mineral SPF 30 daily",
+      "advanced": "SPF 50 mineral — combine with Zinc Oxide"
+    },
+    "routine_timing": ["morning_only"],
+    "routine_step": "spf",
+    "approved_claims": [
+      "FDA Category I UV filter",
+      "UVB + short UVA protection",
+      "Completely inert — no penetration"
+    ]
+  },
+
+  "Neem Extract": {
+    "cosing_ref": "Azadirachta Indica Leaf Extract",
+    "pubchem_cid": null,
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 1,
+    "comedogenic_rating": 0,
+    "mechanism": "Nimbidin + nimbin: anti-inflammatory, inhibit prostaglandin E2 (COX pathway). Azadirachtin: antimicrobial vs P.acnes, S.aureus. Nimbidol: antifungal. Quercetin: antioxidant. Traditional Ayurvedic acne treatment.",
+    "clinical_studies": [
+      {
+        "authors": "Vijayan et al.",
+        "year": 2013,
+        "journal": "J Pharmacognosy and Phytotherapy",
+        "finding": "Neem leaf extract significantly reduced P.acnes colony count and inflammatory lesion number vs vehicle in 8-week study",
+        "evidence_level": "Clinical Trial",
+        "n_patients": 40
+      }
+    ],
+    "use_for_conditions": ["acne", "redness"],
+    "severity_thresholds": {
+      "mild": { "concentration": "1%", "form": "serum or mask" },
+      "moderate": { "concentration": "2-3%", "form": "serum" },
+      "severe": { "concentration": "5%", "form": "treatment" }
+    },
+    "experience_gates": {
+      "beginner": "1-2% in gentle formulation",
+      "intermediate": "3% neem serum targeted for breakouts",
+      "advanced": "5% — patch test for sensitivity"
+    },
+    "routine_timing": ["evening"],
+    "routine_step": "serum",
+    "approved_claims": [
+      "Reduces P.acnes (clinical trial)",
+      "COX pathway anti-inflammatory",
+      "Antifungal — for fungal acne"
+    ]
+  },
+
+  "Willow Bark Extract": {
+    "cosing_ref": "Salix Alba Bark Extract",
+    "pubchem_cid": null,
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 1,
+    "comedogenic_rating": 0,
+    "mechanism": "Contains salicin which converts to salicylic acid on skin via esterase enzymes. Slower, more sustained release than synthetic SA — less irritation. Contains additional flavonoids (catechins) for antioxidant benefit. Anti-inflammatory tannins.",
+    "clinical_studies": [
+      {
+        "authors": "Draelos",
+        "year": 2015,
+        "journal": "J Cosmetic Dermatology",
+        "finding": "Willow bark extract showed comparable pore-minimizing and mild exfoliating activity to synthetic salicylic acid with improved tolerability",
+        "evidence_level": "Clinical Observation",
+        "n_patients": 30
+      }
+    ],
+    "use_for_conditions": ["acne", "pores"],
+    "severity_thresholds": {
+      "mild": { "concentration": "1%", "form": "toner" },
+      "moderate": { "concentration": "2-3%", "form": "serum" },
+      "severe": { "concentration": "5%", "form": "serum" }
+    },
+    "experience_gates": {
+      "beginner": "1-2% — gentler than synthetic SA, good SA alternative",
+      "intermediate": "3% exfoliating toner PM",
+      "advanced": "5% for regular exfoliation"
+    },
+    "routine_timing": ["evening"],
+    "routine_step": "exfoliant_toner",
+    "approved_claims": [
+      "Natural BHA source — gentler than synthetic",
+      "Pore-minimizing (clinical observation)",
+      "Anti-inflammatory + antioxidant bonus"
+    ]
+  },
+
+  "Polyglutamic Acid": {
+    "cosing_ref": "Polyglutamic Acid",
+    "pubchem_cid": null,
+    "eu_approved": true,
+    "eu_max_concentration_face": "no regulatory limit",
+    "incidecoder_score": "good",
+    "cosdna_acne_score": 0,
+    "cosdna_irritant_score": 0,
+    "comedogenic_rating": 0,
+    "mechanism": "Fermentation-derived polypeptide from Bacillus subtilis. Binds 5000x its weight in water — 4-5x more than hyaluronic acid. Inhibits hyaluronidase enzyme that degrades skin's natural HA. Forms film layer preventing moisture escape.",
+    "clinical_studies": [
+      {
+        "authors": "Huang et al.",
+        "year": 2014,
+        "journal": "J Cosmetic Dermatology",
+        "finding": "Topical polyglutamic acid demonstrated superior skin hydration retention vs hyaluronic acid over 8-hour period in 40-subject study",
+        "evidence_level": "Clinical Trial",
+        "n_patients": 40
+      }
+    ],
+    "use_for_conditions": ["dryness", "wrinkles", "all_types"],
+    "severity_thresholds": {
+      "mild": { "concentration": "1%", "form": "serum" },
+      "moderate": { "concentration": "2%", "form": "serum" },
+      "severe": { "concentration": "3%", "form": "serum or essence" }
+    },
+    "experience_gates": {
+      "beginner": "Any % — hyaluronic acid upgrade, zero risk",
+      "intermediate": "1-2% serum on damp skin",
+      "advanced": "Stack with HA for 2-layer humectant system"
+    },
+    "routine_timing": ["morning", "evening"],
+    "routine_step": "serum",
+    "application_note": "Apply to damp skin. Holds moisture longer than HA.",
+    "approved_claims": [
+      "Holds 5000x its weight in water",
+      "Superior to HA in 8-hour hydration retention",
+      "Inhibits hyaluronidase — protects skin's own HA"
+    ]
+  }
+}

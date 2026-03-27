@@ -3,5 +3,9 @@ node_modules/
 .DS_Store
 push_output.txt
 error_push.txt
-node_modules
-node_modules
+4788-images-Human-Facial-Skin-Defects-Data-main/
+PAD-UFES-20/
+Skin Issues Dataset/
+fitzpatrick17k-main/
+scin-main/
+ml_pipeline/

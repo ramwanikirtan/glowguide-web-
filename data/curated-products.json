@@ -1,0 +1,1421 @@
+{
+  "Salicylic Acid": [
+    {
+      "name": "Paula's Choice 2% BHA Liquid Exfoliant",
+      "brand": "Paula's Choice",
+      "price": 34,
+      "currency": "USD",
+      "rating": 4.7,
+      "reviewCount": 48000,
+      "url": "https://www.paulaschoice.com/skin-perfecting-2-bha-liquid-salicylic-acid-exfoliant/201.html",
+      "source": "paulaschoice.com",
+      "keyIngredient": "Salicylic Acid 2%",
+      "bestFor": [
+        "oily",
+        "combination",
+        "acne-prone"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": "Best Seller",
+      "image": "https://images.openbeautyfacts.org/images/products/065/543/900/5913/front_en.3.400.jpg"
+    },
+    {
+      "name": "The Ordinary Salicylic Acid 2% Anhydrous Solution",
+      "brand": "The Ordinary",
+      "price": 12.5,
+      "currency": "USD",
+      "rating": 4.4,
+      "reviewCount": 22000,
+      "url": "https://theordinary.com/en-gb/salicylic-acid-2-anhydrous-solution-100411.html",
+      "source": "theordinary.com",
+      "keyIngredient": "Salicylic Acid 2%",
+      "bestFor": [
+        "oily",
+        "combination",
+        "acne-prone"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Value",
+      "image": "https://theordinary.com/on/demandware.static/-/Library-Sites-DeciemSharedLibrary/default/dw665025d6/theordinary/homepage/slotA/heroes-slot-a-mobile.jpg"
+    },
+    {
+      "name": "CeraVe Renewing SA Cleanser",
+      "brand": "CeraVe",
+      "price": 14,
+      "currency": "USD",
+      "rating": 4.6,
+      "reviewCount": 35000,
+      "url": "https://www.cerave.com/skincare/cleansers/renewing-sa-cleanser",
+      "source": "cerave.com",
+      "keyIngredient": "Salicylic Acid",
+      "bestFor": [
+        "oily",
+        "combination",
+        "acne-prone",
+        "sensitive"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": null,
+      "image": "https://images.openbeautyfacts.org/images/products/009/044/315/6556/front_en.3.400.jpg"
+    }
+  ],
+  "Niacinamide": [
+    {
+      "name": "The Ordinary Niacinamide 10% + Zinc 1%",
+      "brand": "The Ordinary",
+      "price": 7.9,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 120000,
+      "url": "https://theordinary.com/en-gb/niacinamide-10pct-zinc-1pct-100436.html",
+      "source": "theordinary.com",
+      "keyIngredient": "Niacinamide 10%",
+      "bestFor": [
+        "oily",
+        "combination",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Editor's Pick",
+      "image": "https://theordinary.com/on/demandware.static/-/Library-Sites-DeciemSharedLibrary/default/dw665025d6/theordinary/homepage/slotA/heroes-slot-a-mobile.jpg"
+    },
+    {
+      "name": "Paula's Choice 10% Niacinamide Booster",
+      "brand": "Paula's Choice",
+      "price": 48,
+      "currency": "USD",
+      "rating": 4.6,
+      "reviewCount": 9500,
+      "url": "https://www.paulaschoice.com/10percent-niacinamide-booster/7720.html",
+      "source": "paulaschoice.com",
+      "keyIngredient": "Niacinamide 10%",
+      "bestFor": [
+        "oily",
+        "combination",
+        "acne-prone"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": null,
+      "image": "https://images.openbeautyfacts.org/images/products/000/000/000/0000/front.jpg"
+    },
+    {
+      "name": "Naturium Niacinamide Serum 12% Plus Zinc 2%",
+      "brand": "Naturium",
+      "price": 22,
+      "currency": "USD",
+      "rating": 4.7,
+      "reviewCount": 18000,
+      "url": "https://naturium.com/products/niacinamide-serum-12-plus-zinc-2",
+      "source": "naturium.com",
+      "keyIngredient": "Niacinamide 12%",
+      "bestFor": [
+        "oily",
+        "combination",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Value",
+      "image": "http://naturium.com/cdn/shop/files/NATR_NiacinamideSerum_Anniv_Front_CapOn_ecomm.webp?v=1774292312&width=2048"
+    }
+  ],
+  "Retinol": [
+    {
+      "name": "The Ordinary Retinol 0.5% in Squalane",
+      "brand": "The Ordinary",
+      "price": 8.7,
+      "currency": "USD",
+      "rating": 4.3,
+      "reviewCount": 28000,
+      "url": "https://theordinary.com/en-gb/retinol-0-5pct-in-squalane-100403.html",
+      "source": "theordinary.com",
+      "keyIngredient": "Retinol 0.5%",
+      "bestFor": [
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Value",
+      "image": "https://theordinary.com/on/demandware.static/-/Library-Sites-DeciemSharedLibrary/default/dw665025d6/theordinary/homepage/slotA/heroes-slot-a-mobile.jpg"
+    },
+    {
+      "name": "RoC Retinol Correxion Classic Retinol Serum",
+      "brand": "RoC Skincare",
+      "price": 36,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 14000,
+      "url": "https://www.rocskincare.com/products/retinol-correxion-line-smoothing-serum",
+      "source": "rocskincare.com",
+      "keyIngredient": "Retinol",
+      "bestFor": [
+        "all_types"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": null
+    },
+    {
+      "name": "SkinCeuticals Retinol 0.5 Refining Night Cream",
+      "brand": "SkinCeuticals",
+      "price": 95,
+      "currency": "USD",
+      "rating": 4.7,
+      "reviewCount": 5200,
+      "url": "https://www.skinceuticals.com/retinol-0.5-refining-night-cream-635494262086.html",
+      "source": "skinceuticals.com",
+      "keyIngredient": "Pure Retinol 0.5%",
+      "bestFor": [
+        "all_types"
+      ],
+      "priceRange": "premium",
+      "inStock": true,
+      "badge": "Dermatologist Recommended"
+    }
+  ],
+  "Vitamin C (L-Ascorbic Acid)": [
+    {
+      "name": "SkinCeuticals C E Ferulic",
+      "brand": "SkinCeuticals",
+      "price": 182,
+      "currency": "USD",
+      "rating": 4.8,
+      "reviewCount": 12000,
+      "url": "https://www.skinceuticals.com/c-e-ferulic-635494263038.html",
+      "source": "skinceuticals.com",
+      "keyIngredient": "Vitamin C 15%",
+      "bestFor": [
+        "all_types"
+      ],
+      "priceRange": "luxury",
+      "inStock": true,
+      "badge": "#1 Vitamin C"
+    },
+    {
+      "name": "TruSkin Vitamin C Serum",
+      "brand": "TruSkin",
+      "price": 23,
+      "currency": "USD",
+      "rating": 4.4,
+      "reviewCount": 62000,
+      "url": "https://truskin.com/products/vitamin-c-serum",
+      "source": "truskin.com",
+      "keyIngredient": "Vitamin C 20%",
+      "bestFor": [
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Value"
+    },
+    {
+      "name": "Klairs Freshly Juiced Vitamin C Drop",
+      "brand": "Dear, Klairs",
+      "price": 27,
+      "currency": "USD",
+      "rating": 4.6,
+      "reviewCount": 19000,
+      "url": "https://www.klairscosmetics.com/product/freshly-juiced-vitamin-c-drop/",
+      "source": "klairscosmetics.com",
+      "keyIngredient": "Vitamin C 5%",
+      "bestFor": [
+        "sensitive",
+        "all_types"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": null
+    }
+  ],
+  "Hyaluronic Acid": [
+    {
+      "name": "The Ordinary Hyaluronic Acid 2% + B5",
+      "brand": "The Ordinary",
+      "price": 8.3,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 95000,
+      "url": "https://theordinary.com/en-gb/hyaluronic-acid-2pct-b5-100483.html",
+      "source": "theordinary.com",
+      "keyIngredient": "Hyaluronic Acid 2%",
+      "bestFor": [
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Seller",
+      "image": "https://images.openbeautyfacts.org/images/products/076/991/519/0199/front_en.10.400.jpg"
+    },
+    {
+      "name": "Neutrogena Hydro Boost Water Gel",
+      "brand": "Neutrogena",
+      "price": 20,
+      "currency": "USD",
+      "rating": 4.6,
+      "reviewCount": 45000,
+      "url": "https://www.neutrogena.com/face/moisturizers/hydro-boost-water-gel/6811044.html",
+      "source": "neutrogena.com",
+      "keyIngredient": "Hyaluronic Acid",
+      "bestFor": [
+        "dry",
+        "dehydrated",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": null,
+      "image": "https://images.openbeautyfacts.org/images/products/789/101/088/2983/front_xx.6.400.jpg"
+    }
+  ],
+  "Ceramides": [
+    {
+      "name": "CeraVe Moisturizing Cream",
+      "brand": "CeraVe",
+      "price": 19,
+      "currency": "USD",
+      "rating": 4.8,
+      "reviewCount": 120000,
+      "url": "https://www.cerave.com/skincare/moisturizers/moisturizing-cream",
+      "source": "cerave.com",
+      "keyIngredient": "Ceramides 1, 3, 6-II",
+      "bestFor": [
+        "dry",
+        "sensitive",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Dermatologist Recommended",
+      "image": "https://images.openbeautyfacts.org/images/products/360/600/053/7743/front_en.37.400.jpg"
+    },
+    {
+      "name": "Elizabeth Arden Advanced Ceramide Capsules",
+      "brand": "Elizabeth Arden",
+      "price": 72,
+      "currency": "USD",
+      "rating": 4.7,
+      "reviewCount": 8500,
+      "url": "https://www.elizabetharden.com/advanced-ceramide-capsules-daily-youth-restoring-serum-0085805444839.html",
+      "source": "elizabetharden.com",
+      "keyIngredient": "Ceramide Complex",
+      "bestFor": [
+        "dry",
+        "mature",
+        "all_types"
+      ],
+      "priceRange": "premium",
+      "inStock": true,
+      "badge": null
+    }
+  ],
+  "Azelaic Acid": [
+    {
+      "name": "The Ordinary Azelaic Acid Suspension 10%",
+      "brand": "The Ordinary",
+      "price": 11,
+      "currency": "USD",
+      "rating": 4.3,
+      "reviewCount": 25000,
+      "url": "https://theordinary.com/en-gb/azelaic-acid-suspension-10pct-100433.html",
+      "source": "theordinary.com",
+      "keyIngredient": "Azelaic Acid 10%",
+      "bestFor": [
+        "oily",
+        "combination",
+        "rosacea",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Value",
+      "image": "https://theordinary.com/on/demandware.static/-/Library-Sites-DeciemSharedLibrary/default/dw665025d6/theordinary/homepage/slotA/heroes-slot-a-mobile.jpg"
+    },
+    {
+      "name": "Paula's Choice 10% Azelaic Acid Booster",
+      "brand": "Paula's Choice",
+      "price": 42,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 6200,
+      "url": "https://www.paulaschoice.com/10percent-azelaic-acid-booster/2060.html",
+      "source": "paulaschoice.com",
+      "keyIngredient": "Azelaic Acid 10%",
+      "bestFor": [
+        "oily",
+        "combination",
+        "sensitive",
+        "rosacea"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": null
+    }
+  ],
+  "Benzoyl Peroxide": [
+    {
+      "name": "PanOxyl Acne Foaming Wash 10% Benzoyl Peroxide",
+      "brand": "PanOxyl",
+      "price": 12,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 40000,
+      "url": "https://panoxyl.com/products/acne-foaming-wash",
+      "source": "panoxyl.com",
+      "keyIngredient": "Benzoyl Peroxide 10%",
+      "bestFor": [
+        "oily",
+        "acne-prone"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Seller"
+    },
+    {
+      "name": "La Roche-Posay Effaclar Duo+ Acne Treatment",
+      "brand": "La Roche-Posay",
+      "price": 32,
+      "currency": "USD",
+      "rating": 4.6,
+      "reviewCount": 14000,
+      "url": "https://www.laroche-posay.us/effaclar/effaclar-duo-plus-acne-treatment-3337875546485.html",
+      "source": "laroche-posay.us",
+      "keyIngredient": "Benzoyl Peroxide + LHA",
+      "bestFor": [
+        "oily",
+        "combination",
+        "acne-prone"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": null,
+      "image": "https://images.openbeautyfacts.org/images/products/333/787/554/6072/front_en.5.400.jpg"
+    }
+  ],
+  "Alpha Arbutin": [
+    {
+      "name": "The Ordinary Alpha Arbutin 2% + HA",
+      "brand": "The Ordinary",
+      "price": 9.9,
+      "currency": "USD",
+      "rating": 4.4,
+      "reviewCount": 35000,
+      "url": "https://theordinary.com/en-gb/alpha-arbutin-2pct-ha-100419.html",
+      "source": "theordinary.com",
+      "keyIngredient": "Alpha Arbutin 2%",
+      "bestFor": [
+        "all_types",
+        "hyperpigmentation"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Value",
+      "image": "https://theordinary.com/on/demandware.static/-/Library-Sites-DeciemSharedLibrary/default/dw665025d6/theordinary/homepage/slotA/heroes-slot-a-mobile.jpg"
+    },
+    {
+      "name": "Zitomer Alpha Arbutin 4% Serum",
+      "brand": "Zitomer",
+      "price": 35,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 3200,
+      "url": "https://www.sephora.com/search?keyword=alpha+arbutin+serum",
+      "source": "sephora.com",
+      "keyIngredient": "Alpha Arbutin 4%",
+      "bestFor": [
+        "all_types",
+        "hyperpigmentation"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": null
+    }
+  ],
+  "Glycolic Acid": [
+    {
+      "name": "The Ordinary Glycolic Acid 7% Toning Solution",
+      "brand": "The Ordinary",
+      "price": 9.8,
+      "currency": "USD",
+      "rating": 4.4,
+      "reviewCount": 55000,
+      "url": "https://theordinary.com/en-gb/glycolic-acid-7pct-toning-solution-100430.html",
+      "source": "theordinary.com",
+      "keyIngredient": "Glycolic Acid 7%",
+      "bestFor": [
+        "oily",
+        "combination",
+        "dull"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Seller",
+      "image": "https://images.openbeautyfacts.org/images/products/076/991/519/0977/front_en.21.400.jpg"
+    },
+    {
+      "name": "Pixi Glow Tonic",
+      "brand": "Pixi Beauty",
+      "price": 22,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 30000,
+      "url": "https://www.pixibeauty.com/products/glow-tonic",
+      "source": "pixibeauty.com",
+      "keyIngredient": "Glycolic Acid 5%",
+      "bestFor": [
+        "dull",
+        "combination",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Editor's Pick"
+    },
+    {
+      "name": "Sunday Riley Good Genes All-In-One Lactic Acid Treatment",
+      "brand": "Sunday Riley",
+      "price": 85,
+      "currency": "USD",
+      "rating": 4.6,
+      "reviewCount": 9800,
+      "url": "https://sundayriley.com/products/good-genes-all-in-one-lactic-acid-treatment",
+      "source": "sundayriley.com",
+      "keyIngredient": "Lactic Acid + Glycolic",
+      "bestFor": [
+        "all_types"
+      ],
+      "priceRange": "premium",
+      "inStock": true,
+      "badge": null
+    }
+  ],
+  "Centella Asiatica": [
+    {
+      "name": "COSRX Pure Fit Cica Serum",
+      "brand": "COSRX",
+      "price": 24,
+      "currency": "USD",
+      "rating": 4.6,
+      "reviewCount": 12000,
+      "url": "https://www.cosrx.com/products/pure-fit-cica-serum",
+      "source": "cosrx.com",
+      "keyIngredient": "Centella Asiatica",
+      "bestFor": [
+        "sensitive",
+        "redness",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "K-Beauty Fave",
+      "image": "http://www.cosrx.com/cdn/shop/files/pure-fit-cica-serum-cosrx-official-1_1200x1200.jpg?v=1724835220"
+    },
+    {
+      "name": "Dr. Jart+ Cicapair Tiger Grass Serum",
+      "brand": "Dr. Jart+",
+      "price": 52,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 7500,
+      "url": "https://www.drjart.com/products/cicapair-serum",
+      "source": "drjart.com",
+      "keyIngredient": "Centella Asiatica Complex",
+      "bestFor": [
+        "sensitive",
+        "redness",
+        "rosacea"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": null
+    }
+  ],
+  "Lactic Acid": [
+    {
+      "name": "The Ordinary Lactic Acid 10% + HA",
+      "brand": "The Ordinary",
+      "price": 8.9,
+      "currency": "USD",
+      "rating": 4.4,
+      "reviewCount": 28000,
+      "url": "https://theordinary.com/en-gb/lactic-acid-10pct-ha-100421.html",
+      "source": "theordinary.com",
+      "keyIngredient": "Lactic Acid 10%",
+      "bestFor": [
+        "dry",
+        "sensitive",
+        "dull"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Value",
+      "image": "https://images.openbeautyfacts.org/images/products/076/991/519/0373/front_en.12.400.jpg"
+    },
+    {
+      "name": "REN Ready Steady Glow Daily AHA Tonic",
+      "brand": "REN Clean Skincare",
+      "price": 38,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 5500,
+      "url": "https://www.renskincare.com/products/ready-steady-glow-daily-aha-tonic",
+      "source": "renskincare.com",
+      "keyIngredient": "Lactic Acid + Azelaic Acid",
+      "bestFor": [
+        "all_types"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": null
+    }
+  ],
+  "Squalane": [
+    {
+      "name": "Biossance 100% Squalane Oil",
+      "brand": "Biossance",
+      "price": 32,
+      "currency": "USD",
+      "rating": 4.7,
+      "reviewCount": 16000,
+      "url": "https://biossance.com/products/100-plant-derived-squalane-oil",
+      "source": "biossance.com",
+      "keyIngredient": "Squalane 100%",
+      "bestFor": [
+        "dry",
+        "sensitive",
+        "all_types"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": "Editor's Pick"
+    },
+    {
+      "name": "The Ordinary 100% Plant-Derived Squalane",
+      "brand": "The Ordinary",
+      "price": 9.9,
+      "currency": "USD",
+      "rating": 4.6,
+      "reviewCount": 42000,
+      "url": "https://theordinary.com/en-gb/100pct-plant-derived-squalane-100395.html",
+      "source": "theordinary.com",
+      "keyIngredient": "Squalane",
+      "bestFor": [
+        "dry",
+        "sensitive",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Value",
+      "image": "https://theordinary.com/on/demandware.static/-/Library-Sites-DeciemSharedLibrary/default/dw665025d6/theordinary/homepage/slotA/heroes-slot-a-mobile.jpg"
+    }
+  ],
+  "Tea Tree Oil": [
+    {
+      "name": "The Body Shop Tea Tree Oil",
+      "brand": "The Body Shop",
+      "price": 14,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 25000,
+      "url": "https://www.thebodyshop.com/en-us/skin-care/serums-and-treatments/tea-tree-targeted-gel/p/p005246",
+      "source": "thebodyshop.com",
+      "keyIngredient": "Tea Tree Oil",
+      "bestFor": [
+        "oily",
+        "acne-prone"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Classic"
+    },
+    {
+      "name": "Mario Badescu Drying Lotion",
+      "brand": "Mario Badescu",
+      "price": 20,
+      "currency": "USD",
+      "rating": 4.4,
+      "reviewCount": 18000,
+      "url": "https://www.mariobadescu.com/products/drying-lotion",
+      "source": "mariobadescu.com",
+      "keyIngredient": "Tea Tree + Salicylic Acid",
+      "bestFor": [
+        "oily",
+        "acne-prone"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": null,
+      "image": "http://www.mariobadescu.com/cdn/shop/files/telgrbauypesbxtq2yzg_b3137526-0535-4dbe-8b6d-ca50a78d2c2e.jpg?v=1702450609"
+    }
+  ],
+  "Tranexamic Acid": [
+    {
+      "name": "The INKEY List Tranexamic Acid Night Treatment",
+      "brand": "The INKEY List",
+      "price": 17.99,
+      "currency": "USD",
+      "rating": 4.4,
+      "reviewCount": 8000,
+      "url": "https://www.theinkeylist.com/products/tranexamic-acid-night-treatment",
+      "source": "theinkeylist.com",
+      "keyIngredient": "Tranexamic Acid 2%",
+      "bestFor": [
+        "hyperpigmentation",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Value",
+      "image": "http://www.theinkeylist.com/cdn/shop/files/TheINKEYList_TranexamicAcidSerum_30mlpump_1000x1000_b480622d-efd7-48a7-ac34-87f6724691a2.png?v=1704369745"
+    },
+    {
+      "name": "Murad Rapid Age Spot and Pigment Lightening Serum",
+      "brand": "Murad",
+      "price": 76,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 5000,
+      "url": "https://www.murad.com/rapid-age-spot-and-pigment-lightening-serum",
+      "source": "murad.com",
+      "keyIngredient": "Tranexamic Acid + Hexylresorcinol",
+      "bestFor": [
+        "hyperpigmentation",
+        "mature",
+        "all_types"
+      ],
+      "priceRange": "premium",
+      "inStock": true,
+      "badge": null
+    }
+  ],
+  "Copper Peptides GHK-Cu": [
+    {
+      "name": "The Ordinary Multi-Peptide Serum for Hair Density",
+      "brand": "The Ordinary",
+      "price": 18.9,
+      "currency": "USD",
+      "rating": 4.4,
+      "reviewCount": 12000,
+      "url": "https://theordinary.com/en-gb/multi-peptide-serum-for-hair-density-100419.html",
+      "source": "theordinary.com",
+      "keyIngredient": "Copper Peptides GHK-Cu",
+      "bestFor": [
+        "mature",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Value",
+      "image": "https://theordinary.com/on/demandware.static/-/Library-Sites-DeciemSharedLibrary/default/dw665025d6/theordinary/homepage/slotA/heroes-slot-a-mobile.jpg"
+    },
+    {
+      "name": "NIOD Copper Amino Isolate Serum 1%",
+      "brand": "NIOD",
+      "price": 55,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 3200,
+      "url": "https://deciem.com/en-us/niod/niod-copper-amino-isolate-serum-1pct-100ml-100441.html",
+      "source": "deciem.com",
+      "keyIngredient": "Copper Peptides 1%",
+      "bestFor": [
+        "mature",
+        "all_types"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": null,
+      "image": "https://images.openbeautyfacts.org/images/products/076/991/515/2203/front_en.3.400.jpg"
+    }
+  ],
+  "Colloidal Oatmeal": [
+    {
+      "name": "Aveeno Calm + Restore Oat Serum",
+      "brand": "Aveeno",
+      "price": 22,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 14000,
+      "url": "https://www.aveeno.com/products/calm-restore-oat-serum",
+      "source": "aveeno.com",
+      "keyIngredient": "Colloidal Oatmeal",
+      "bestFor": [
+        "sensitive",
+        "dry",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Dermatologist Recommended"
+    },
+    {
+      "name": "First Aid Beauty Ultra Repair Cream",
+      "brand": "First Aid Beauty",
+      "price": 36,
+      "currency": "USD",
+      "rating": 4.7,
+      "reviewCount": 22000,
+      "url": "https://www.firstaidbeauty.com/ultra-repair-cream-intense-hydration",
+      "source": "firstaidbeauty.com",
+      "keyIngredient": "Colloidal Oatmeal 1%",
+      "bestFor": [
+        "sensitive",
+        "dry",
+        "eczema-prone"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": "Cult Classic",
+      "image": "https://images.openbeautyfacts.org/images/products/085/193/900/2791/front_en.3.400.jpg"
+    }
+  ],
+  "Zinc Oxide": [
+    {
+      "name": "La Roche-Posay Anthelios Mineral Tinted Sunscreen SPF 50",
+      "brand": "La Roche-Posay",
+      "price": 34,
+      "currency": "USD",
+      "rating": 4.6,
+      "reviewCount": 25000,
+      "url": "https://www.laroche-posay.us/our-products/sun/sunscreen/anthelios-tinted-mineral-sunscreen-for-face-spf-50-883140000945.html",
+      "source": "laroche-posay.us",
+      "keyIngredient": "Zinc Oxide + Titanium Dioxide",
+      "bestFor": [
+        "sensitive",
+        "all_types"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": "Mineral SPF",
+      "image": "https://images.openbeautyfacts.org/images/products/333/787/558/7337/front_en.3.400.jpg"
+    },
+    {
+      "name": "EltaMD UV Clear Broad-Spectrum SPF 46",
+      "brand": "EltaMD",
+      "price": 41,
+      "currency": "USD",
+      "rating": 4.6,
+      "reviewCount": 35000,
+      "url": "https://eltamd.com/products/uv-clear-face-sunscreen-spf-46",
+      "source": "eltamd.com",
+      "keyIngredient": "Zinc Oxide 9%",
+      "bestFor": [
+        "acne-prone",
+        "sensitive",
+        "all_types"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": "Derm Favorite",
+      "image": "https://images.openbeautyfacts.org/images/products/035/629/550/0060/front_en.3.400.jpg"
+    }
+  ],
+  "Titanium Dioxide": [
+    {
+      "name": "Neutrogena Sheer Zinc SPF 50 Sunscreen",
+      "brand": "Neutrogena",
+      "price": 13,
+      "currency": "USD",
+      "rating": 4.4,
+      "reviewCount": 22000,
+      "url": "https://www.neutrogena.com/sun/sunscreen/sheer-zinc-face-dry-touch-sunscreen-spf-50/6820021.html",
+      "source": "neutrogena.com",
+      "keyIngredient": "Zinc Oxide + Titanium Dioxide",
+      "bestFor": [
+        "sensitive",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Value",
+      "image": "https://images.openbeautyfacts.org/images/products/070/501/106/1237/front_en.4.400.jpg"
+    },
+    {
+      "name": "Supergoop! Unseen Sunscreen SPF 40",
+      "brand": "Supergoop!",
+      "price": 38,
+      "currency": "USD",
+      "rating": 4.6,
+      "reviewCount": 28000,
+      "url": "https://supergoop.com/products/unseen-sunscreen",
+      "source": "supergoop.com",
+      "keyIngredient": "Chemical + Mineral UV Filters",
+      "bestFor": [
+        "all_types"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": "Editor's Pick",
+      "image": "https://images.openbeautyfacts.org/images/products/081/621/802/6530/front_en.3.400.jpg"
+    }
+  ],
+  "Glycerin": [
+    {
+      "name": "Vanicream Moisturizing Skin Cream",
+      "brand": "Vanicream",
+      "price": 15,
+      "currency": "USD",
+      "rating": 4.7,
+      "reviewCount": 30000,
+      "url": "https://www.vanicream.com/product/vanicream-moisturizing-skin-cream",
+      "source": "vanicream.com",
+      "keyIngredient": "Glycerin",
+      "bestFor": [
+        "sensitive",
+        "dry",
+        "eczema-prone",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Dermatologist Recommended"
+    },
+    {
+      "name": "La Roche-Posay Toleriane Double Repair Face Moisturizer",
+      "brand": "La Roche-Posay",
+      "price": 24,
+      "currency": "USD",
+      "rating": 4.7,
+      "reviewCount": 25000,
+      "url": "https://www.laroche-posay.us/face-care/moisturizers/toleriane-double-repair-face-moisturizer-3337875545785.html",
+      "source": "laroche-posay.us",
+      "keyIngredient": "Glycerin + Ceramide",
+      "bestFor": [
+        "sensitive",
+        "dry",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": null,
+      "image": "https://images.openbeautyfacts.org/images/products/333/787/554/5846/front_en.3.400.jpg"
+    }
+  ],
+  "Bakuchiol": [
+    {
+      "name": "Herbivore Bakuchiol Retinol Alternative Serum",
+      "brand": "Herbivore Botanicals",
+      "price": 54,
+      "currency": "USD",
+      "rating": 4.4,
+      "reviewCount": 4500,
+      "url": "https://herbivorebotanicals.com/products/bakuchiol-retinol-alternative-serum",
+      "source": "herbivorebotanicals.com",
+      "keyIngredient": "Bakuchiol 0.5%",
+      "bestFor": [
+        "sensitive",
+        "pregnant-safe",
+        "all_types"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": "Pregnancy Safe"
+    },
+    {
+      "name": "Bybi Bakuchiol Booster",
+      "brand": "BYBI Beauty",
+      "price": 25,
+      "currency": "USD",
+      "rating": 4.3,
+      "reviewCount": 2800,
+      "url": "https://www.bybibeauty.com/products/bakuchiol-booster",
+      "source": "bybibeauty.com",
+      "keyIngredient": "Bakuchiol",
+      "bestFor": [
+        "sensitive",
+        "all_types"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": null
+    }
+  ],
+  "Matrixyl Peptide": [
+    {
+      "name": "The Ordinary \"Buffet\" Multi-Technology Peptide Serum",
+      "brand": "The Ordinary",
+      "price": 15.8,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 38000,
+      "url": "https://theordinary.com/en-gb/buffet-multi-technology-peptide-serum-100454.html",
+      "source": "theordinary.com",
+      "keyIngredient": "Matrixyl 3000 + 11 peptide technologies",
+      "bestFor": [
+        "mature",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Seller"
+    },
+    {
+      "name": "StriVectin Super-C Retinol Brighten & Correct Serum",
+      "brand": "StriVectin",
+      "price": 89,
+      "currency": "USD",
+      "rating": 4.6,
+      "reviewCount": 3100,
+      "url": "https://www.strivectin.com/products/super-c-retinol-brighten-correct-vitamin-c-serum",
+      "source": "strivectin.com",
+      "keyIngredient": "Matrixyl Synthe'6 + Peptides",
+      "bestFor": [
+        "mature",
+        "all_types"
+      ],
+      "priceRange": "premium",
+      "inStock": true,
+      "badge": null,
+      "image": "http://strivectin.com/cdn/shop/files/Strivectin_MA_SuperC_Retinol_Brighten_Correct_VitaminC_Serum_1oz_1440x1440_300dpi_PDP_01.jpg?v=1757984178"
+    }
+  ],
+  "Zinc PCA": [
+    {
+      "name": "The Ordinary Zinc PCA 2%",
+      "brand": "The Ordinary",
+      "price": 8.5,
+      "currency": "USD",
+      "rating": 4.3,
+      "reviewCount": 9000,
+      "url": "https://theordinary.com/en-gb/zinc-pca-2pct-100406.html",
+      "source": "theordinary.com",
+      "keyIngredient": "Zinc PCA 2%",
+      "bestFor": [
+        "oily",
+        "combination",
+        "acne-prone"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Value",
+      "image": "https://theordinary.com/on/demandware.static/-/Library-Sites-DeciemSharedLibrary/default/dw665025d6/theordinary/homepage/slotA/heroes-slot-a-mobile.jpg"
+    }
+  ],
+  "Ferulic Acid": [
+    {
+      "name": "Timeless Vitamin C + E + Ferulic Acid Serum",
+      "brand": "Timeless Skin Care",
+      "price": 24.95,
+      "currency": "USD",
+      "rating": 4.6,
+      "reviewCount": 25000,
+      "url": "https://www.timelessha.com/products/20-vitamin-c-e-ferulic-acid-serum",
+      "source": "timelessha.com",
+      "keyIngredient": "Ferulic Acid + Vitamin C 20%",
+      "bestFor": [
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Dupe King"
+    }
+  ],
+  "Rosehip Oil": [
+    {
+      "name": "Trilogy Certified Organic Rosehip Oil",
+      "brand": "Trilogy",
+      "price": 30,
+      "currency": "USD",
+      "rating": 4.7,
+      "reviewCount": 18000,
+      "url": "https://www.trilogyproducts.com/products/certified-organic-rosehip-oil",
+      "source": "trilogyproducts.com",
+      "keyIngredient": "Rosehip Seed Oil",
+      "bestFor": [
+        "dry",
+        "mature",
+        "scarring",
+        "all_types"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": "Certified Organic",
+      "image": "http://www.trilogyproducts.com/cdn/shop/files/TRO45_RosehipOil45ml.png?v=1722828826"
+    }
+  ],
+  "Kojic Acid": [
+    {
+      "name": "The INKEY List Kojic Acid Serum",
+      "brand": "The INKEY List",
+      "price": 16.99,
+      "currency": "USD",
+      "rating": 4.3,
+      "reviewCount": 6500,
+      "url": "https://www.theinkeylist.com/products/kojic-acid-serum",
+      "source": "theinkeylist.com",
+      "keyIngredient": "Kojic Acid 2%",
+      "bestFor": [
+        "hyperpigmentation",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Value"
+    }
+  ],
+  "Panthenol B5": [
+    {
+      "name": "The Ordinary Panthenol 10% (Vitamin B5) Suspension",
+      "brand": "The Ordinary",
+      "price": 9.5,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 7200,
+      "url": "https://theordinary.com/en-gb/multi-peptide-eye-serum-100449.html",
+      "source": "theordinary.com",
+      "keyIngredient": "Panthenol 10%",
+      "bestFor": [
+        "dry",
+        "sensitive",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Value",
+      "image": "https://theordinary.com/on/demandware.static/-/Library-Sites-DeciemSharedLibrary/default/dw665025d6/theordinary/homepage/slotA/heroes-slot-a-mobile.jpg"
+    }
+  ],
+  "Aloe Vera": [
+    {
+      "name": "Thayers Alcohol-Free Witch Hazel Toner with Aloe Vera",
+      "brand": "Thayers",
+      "price": 12,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 42000,
+      "url": "https://thayers.com/toners/rose-petal-witch-hazel-toner-with-aloe-vera/",
+      "source": "thayers.com",
+      "keyIngredient": "Aloe Vera + Witch Hazel",
+      "bestFor": [
+        "oily",
+        "sensitive",
+        "combination",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Classic"
+    }
+  ],
+  "Shea Butter": [
+    {
+      "name": "The Body Shop Shea Body Butter",
+      "brand": "The Body Shop",
+      "price": 22,
+      "currency": "USD",
+      "rating": 4.6,
+      "reviewCount": 18000,
+      "url": "https://www.thebodyshop.com/en-us/body-care/body-butters/shea-body-butter/p/p002992",
+      "source": "thebodyshop.com",
+      "keyIngredient": "Shea Butter",
+      "bestFor": [
+        "dry",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Classic",
+      "image": "https://images.openbeautyfacts.org/images/products/502/819/755/7904/front_en.4.400.jpg"
+    }
+  ],
+  "Polyglutamic Acid": [
+    {
+      "name": "The INKEY List Polyglutamic Acid Dewy Serum",
+      "brand": "The INKEY List",
+      "price": 18.99,
+      "currency": "USD",
+      "rating": 4.4,
+      "reviewCount": 7000,
+      "url": "https://www.theinkeylist.com/products/polyglutamic-acid-hydrating-serum",
+      "source": "theinkeylist.com",
+      "keyIngredient": "Polyglutamic Acid",
+      "bestFor": [
+        "dry",
+        "dehydrated",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Hyaluronic Acid Dupe"
+    }
+  ],
+  "Resveratrol": [
+    {
+      "name": "The Ordinary Resveratrol 3% + Ferulic Acid 3%",
+      "brand": "The Ordinary",
+      "price": 11.9,
+      "currency": "USD",
+      "rating": 4.4,
+      "reviewCount": 12000,
+      "url": "https://theordinary.com/en-gb/resveratrol-3pct-ferulic-acid-3pct-100425.html",
+      "source": "theordinary.com",
+      "keyIngredient": "Resveratrol 3% + Ferulic Acid 3%",
+      "bestFor": [
+        "mature",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Value",
+      "image": "https://theordinary.com/on/demandware.static/-/Library-Sites-DeciemSharedLibrary/default/dw665025d6/theordinary/homepage/slotA/heroes-slot-a-mobile.jpg"
+    }
+  ],
+  "Madecassoside": [
+    {
+      "name": "COSRX Centella Blemish Cream",
+      "brand": "COSRX",
+      "price": 16,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 8500,
+      "url": "https://www.cosrx.com/products/centella-blemish-cream",
+      "source": "cosrx.com",
+      "keyIngredient": "Madecassoside + Centella",
+      "bestFor": [
+        "sensitive",
+        "redness",
+        "acne-prone"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "K-Beauty",
+      "image": "http://www.cosrx.com/cdn/shop/files/centella-blemish-cream-cosrx-official-1_1200x1200.jpg?v=1724835126"
+    }
+  ],
+  "Neem Extract": [
+    {
+      "name": "Kiehl's Breakout Control Targeted Blemish Spot Treatment",
+      "brand": "Kiehl's",
+      "price": 22,
+      "currency": "USD",
+      "rating": 4.3,
+      "reviewCount": 5200,
+      "url": "https://www.kiehls.com/skincare/face-serums-and-concentrates/breakout-control-targeted-blemish-spot-treatment/KHL432.html",
+      "source": "kiehls.com",
+      "keyIngredient": "Neem + Salicylic Acid",
+      "bestFor": [
+        "oily",
+        "acne-prone"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": null
+    }
+  ],
+  "Mandelic Acid": [
+    {
+      "name": "The Ordinary Mandelic Acid 10% + HA",
+      "brand": "The Ordinary",
+      "price": 10.9,
+      "currency": "USD",
+      "rating": 4.4,
+      "reviewCount": 15000,
+      "url": "https://theordinary.com/en-gb/mandelic-acid-10pct-ha-100451.html",
+      "source": "theordinary.com",
+      "keyIngredient": "Mandelic Acid 10%",
+      "bestFor": [
+        "sensitive",
+        "dark-skin",
+        "hyperpigmentation",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Value",
+      "image": "https://theordinary.com/on/demandware.static/-/Library-Sites-DeciemSharedLibrary/default/dw665025d6/theordinary/homepage/slotA/heroes-slot-a-mobile.jpg"
+    }
+  ],
+  "Jojoba Oil": [
+    {
+      "name": "The Ordinary 100% Organic Cold-Pressed Jojoba Oil",
+      "brand": "The Ordinary",
+      "price": 9.9,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 18000,
+      "url": "https://theordinary.com/en-gb/100pct-organic-cold-pressed-jojoba-oil-100388.html",
+      "source": "theordinary.com",
+      "keyIngredient": "Jojoba Oil",
+      "bestFor": [
+        "dry",
+        "oily",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Value"
+    }
+  ],
+  "face wash": [
+    {
+      "name": "CeraVe Hydrating Facial Cleanser",
+      "brand": "CeraVe",
+      "price": 16,
+      "currency": "USD",
+      "rating": 4.7,
+      "reviewCount": 95000,
+      "url": "https://www.cerave.com/skincare/cleansers/hydrating-facial-cleanser",
+      "source": "cerave.com",
+      "keyIngredient": "Ceramides + Hyaluronic Acid",
+      "bestFor": [
+        "dry",
+        "normal",
+        "sensitive",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Seller",
+      "image": "https://images.openbeautyfacts.org/images/products/360/600/053/7675/front_en.3.400.jpg"
+    },
+    {
+      "name": "La Roche-Posay Toleriane Hydrating Gentle Cleanser",
+      "brand": "La Roche-Posay",
+      "price": 16,
+      "currency": "USD",
+      "rating": 4.7,
+      "reviewCount": 45000,
+      "url": "https://www.laroche-posay.us/our-products/face/face-wash/toleriane-hydrating-gentle-facial-cleanser-702396551.html",
+      "source": "laroche-posay.us",
+      "keyIngredient": "Niacinamide + Ceramide-3",
+      "bestFor": [
+        "sensitive",
+        "dry",
+        "normal",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Derm Favorite",
+      "image": "https://images.openbeautyfacts.org/images/products/333/787/554/5778/front_en.9.400.jpg"
+    },
+    {
+      "name": "The Ordinary Squalane Cleanser",
+      "brand": "The Ordinary",
+      "price": 10,
+      "currency": "USD",
+      "rating": 4.4,
+      "reviewCount": 28000,
+      "url": "https://theordinary.com/en-gb/squalane-cleanser-100402.html",
+      "source": "theordinary.com",
+      "keyIngredient": "Squalane",
+      "bestFor": [
+        "oily",
+        "combination",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Value",
+      "image": "https://theordinary.com/on/demandware.static/-/Library-Sites-DeciemSharedLibrary/default/dw665025d6/theordinary/homepage/slotA/heroes-slot-a-mobile.jpg"
+    }
+  ],
+  "Cleanser": [
+    {
+      "name": "CeraVe Foaming Facial Cleanser",
+      "brand": "CeraVe",
+      "price": 16,
+      "currency": "USD",
+      "rating": 4.7,
+      "reviewCount": 78000,
+      "url": "https://www.cerave.com/skincare/cleansers/foaming-facial-cleanser",
+      "source": "cerave.com",
+      "keyIngredient": "Niacinamide + Ceramides",
+      "bestFor": [
+        "oily",
+        "combination",
+        "normal",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Seller",
+      "image": "https://images.openbeautyfacts.org/images/products/360/600/053/7194/front_en.4.400.jpg"
+    },
+    {
+      "name": "Cetaphil Gentle Skin Cleanser",
+      "brand": "Cetaphil",
+      "price": 13,
+      "currency": "USD",
+      "rating": 4.6,
+      "reviewCount": 62000,
+      "url": "https://www.cetaphil.com/us/cleansers/gentle-skin-cleanser/302993923176.html",
+      "source": "cetaphil.com",
+      "keyIngredient": "Glycerin + Panthenol",
+      "bestFor": [
+        "sensitive",
+        "dry",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Derm Recommended",
+      "image": "https://images.openbeautyfacts.org/images/products/890/600/527/4106/front_en.6.400.jpg"
+    }
+  ],
+  "SPF Sunscreen": [
+    {
+      "name": "La Roche-Posay Anthelios Melt-In Milk Sunscreen SPF 60",
+      "brand": "La Roche-Posay",
+      "price": 36,
+      "currency": "USD",
+      "rating": 4.7,
+      "reviewCount": 42000,
+      "url": "https://www.laroche-posay.us/our-products/sun/sunscreen/anthelios-melt-in-milk-body-and-face-sunscreen-spf-60-883140000907.html",
+      "source": "laroche-posay.us",
+      "keyIngredient": "Cell-Ox Shield SPF 60",
+      "bestFor": [
+        "all_types"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": "Best Seller",
+      "image": "https://images.openbeautyfacts.org/images/products/333/787/558/7603/front_en.4.400.jpg"
+    },
+    {
+      "name": "EltaMD UV Clear Broad-Spectrum SPF 46",
+      "brand": "EltaMD",
+      "price": 41,
+      "currency": "USD",
+      "rating": 4.6,
+      "reviewCount": 35000,
+      "url": "https://eltamd.com/products/uv-clear-face-sunscreen-spf-46",
+      "source": "eltamd.com",
+      "keyIngredient": "Zinc Oxide 9% + Niacinamide",
+      "bestFor": [
+        "acne-prone",
+        "sensitive",
+        "all_types"
+      ],
+      "priceRange": "mid-range",
+      "inStock": true,
+      "badge": "Derm Favorite",
+      "image": "https://images.openbeautyfacts.org/images/products/035/629/550/0060/front_en.3.400.jpg"
+    },
+    {
+      "name": "CeraVe Hydrating Sunscreen Face Lotion SPF 30",
+      "brand": "CeraVe",
+      "price": 16,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviewCount": 28000,
+      "url": "https://www.cerave.com/sunscreen/hydrating-sunscreen-face-lotion-spf-30",
+      "source": "cerave.com",
+      "keyIngredient": "Zinc Oxide + Ceramides",
+      "bestFor": [
+        "sensitive",
+        "dry",
+        "all_types"
+      ],
+      "priceRange": "budget",
+      "inStock": true,
+      "badge": "Best Value",
+      "image": "https://images.openbeautyfacts.org/images/products/360/600/053/7729/front_en.5.400.jpg"
+    }
+  ]
+}

@@ -1,13 +1,5 @@
 require('dotenv').config();
-const Anthropic = require('@anthropic-ai/sdk');
 const OpenAI = require('openai');
-
-const AI_PROVIDER = process.env.AI_PROVIDER || 'anthropic';
-
-// Initialize AI clients
-const anthropic = new Anthropic({
-    apiKey: process.env.ANTHROPIC_API_KEY
-});
 
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY
@@ -38,48 +30,30 @@ Example output:
 Skincare routine to extract from:
 ${routineText}`;
 
-        let responseText;
+        const response = await openai.chat.completions.create({
+            model: 'gpt-4o',
+            max_tokens: 2048,
+            messages: [
+                {
+                    role: 'user',
+                    content: extractionPrompt
+                }
+            ]
+        });
 
-        if (AI_PROVIDER === 'anthropic') {
-            const response = await anthropic.messages.create({
-                model: 'claude-sonnet-4-6-20250514',
-                max_tokens: 2048,
-                messages: [
-                    {
-                        role: 'user',
-                        content: extractionPrompt
-                    }
-                ]
-            });
-            responseText = response.content[0].text;
-        } else if (AI_PROVIDER === 'openai') {
-            const response = await openai.chat.completions.create({
-                model: 'gpt-4o',
-                max_tokens: 2048,
-                messages: [
-                    {
-                        role: 'user',
-                        content: extractionPrompt
-                    }
-                ]
-            });
-            responseText = response.choices[0].message.content;
-        } else {
-            console.error('Invalid AI_PROVIDER');
-            return [];
-        }
+        let responseText = response.choices[0].message.content;
 
         // Strip markdown formatting if present
         let cleanedResponse = responseText.trim();
-        
+
         // Remove markdown code blocks
         cleanedResponse = cleanedResponse.replace(/```json\s*/gi, '');
         cleanedResponse = cleanedResponse.replace(/```\s*/gi, '');
-        
+
         // Remove any text before the first [ and after the last ]
         const startIndex = cleanedResponse.indexOf('[');
         const endIndex = cleanedResponse.lastIndexOf(']');
-        
+
         if (startIndex !== -1 && endIndex !== -1 && endIndex > startIndex) {
             cleanedResponse = cleanedResponse.substring(startIndex, endIndex + 1);
         }

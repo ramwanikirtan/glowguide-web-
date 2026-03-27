@@ -44,7 +44,9 @@ async function initFirebaseAuth() {
             const input = document.getElementById(btn.dataset.target);
             if (!input) return;
             input.type = input.type === 'password' ? 'text' : 'password';
-            btn.textContent = input.type === 'password' ? '👁' : '🙈';
+            btn.innerHTML = input.type === 'password'
+                ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>'
+                : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
         });
     });
 
@@ -2094,7 +2096,11 @@ function _renderHero(rec) {
     const severityFil = document.getElementById('productsSeverityFill');
     const condRow     = document.getElementById('productsConditionsRow');
 
-    const skinTypeLabel = (rec.skinType || 'Normal').charAt(0).toUpperCase() + (rec.skinType || 'Normal').slice(1);
+    // Limit to first two words so it fits inside the badge
+    const rawType = (rec.skinType || 'Normal');
+    const skinTypeLabel = rawType.split(' ').slice(0, 2).map((w, i) =>
+        i === 0 ? w.charAt(0).toUpperCase() + w.slice(1) : w
+    ).join(' ');
     if (skinTypeEl) skinTypeEl.textContent = skinTypeLabel;
 
     if (severityFil) {
@@ -2105,11 +2111,11 @@ function _renderHero(rec) {
     }
 
     if (condRow) {
-        const severityEmoji = { mild: '🟢', moderate: '🟡', severe: '🔴' };
+        const severityDot = { mild: '#16A34A', moderate: '#D97706', severe: '#DC2626' };
+        const dotColor = severityDot[rec.severity] || '#D97706';
         condRow.innerHTML = (rec.conditions || []).map(c => {
-            const label = c.charAt(0).toUpperCase() + c.slice(1);
-            const badge = severityEmoji[rec.severity] || '🟡';
-            return `<span class="products-condition-chip">${badge} ${label} · ${rec.severity}</span>`;
+            const label = c.replace(/_/g, ' ').replace(/\b\w/g, ch => ch.toUpperCase());
+            return `<span class="products-condition-chip"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${dotColor};margin-right:6px;vertical-align:middle;flex-shrink:0"></span>${label} · ${rec.severity}</span>`;
         }).join('');
     }
 }
@@ -2149,7 +2155,7 @@ function _renderRoutineTabs(rec, productsByStep) {
     let html = '';
     
     if (morning.length > 0) {
-        html += `<h2 class="products-section-header">☀️ Morning Protocol</h2>`;
+        html += `<h2 class="products-section-header">Morning Protocol</h2>`;
         html += morning.map((step, i) => {
             const products = pByStep[`morning_${step.stepKey}`] || [];
             return _buildStepCard(step, i, 'morning', products);
@@ -2157,7 +2163,7 @@ function _renderRoutineTabs(rec, productsByStep) {
     }
 
     if (evening.length > 0) {
-        html += `<h2 class="products-section-header" style="margin-top:40px">🌙 Evening Protocol</h2>`;
+        html += `<h2 class="products-section-header" style="margin-top:40px">Evening Protocol</h2>`;
         html += evening.map((step, i) => {
             const products = pByStep[`evening_${step.stepKey}`] || [];
             return _buildStepCard(step, i, 'evening', products);
@@ -2165,10 +2171,11 @@ function _renderRoutineTabs(rec, productsByStep) {
     }
 
     container.innerHTML = html;
+    _loadProductImages(container);
 }
 
 function _buildStepCard(step, index, time, products) {
-    const timeEmoji = time === 'morning' ? '☀️ AM' : '🌙 PM';
+    const timeEmoji = time === 'morning' ? 'AM' : 'PM';
     const claimsPreview = (step.approvedClaims || []).slice(0, 1).join('');
     const concentration = step.concentration || '';
     const ingShorten = (step.primaryIngredient || '').split('(')[0].trim();
@@ -2187,7 +2194,7 @@ function _buildStepCard(step, index, time, products) {
         <div class="products-step-body">
             <div class="products-step-why-label">WHY THIS STEP</div>
             <p class="products-step-why-text">${claimsPreview || step.mechanism || 'Essential step in your protocol.'}</p>
-            ${step.primaryIngredient ? `<button class="products-evidence-btn" onclick="openEvidenceModal('${encodeURIComponent(step.primaryIngredient)}')">📋 See Clinical Evidence</button>` : ''}
+            ${step.primaryIngredient ? `<button class="products-evidence-btn" onclick="openEvidenceModal('${encodeURIComponent(step.primaryIngredient)}')">See Clinical Evidence</button>` : ''}
             <div class="products-step-divider"></div>
             <div class="products-step-products-label">RECOMMENDED PRODUCTS</div>
             <div class="products-products-scroll">
@@ -2222,11 +2229,11 @@ function _buildProductMiniCard(p) {
     const encodedProduct = encodeURIComponent(JSON.stringify({ name: p.name || name, brand: p.brand || brand, price: p.price, currency: p.currency, url: p.url || p.link }));
 
     const hasImage = !!p.image;
-    const bgColor = _brandColor(brand || name);
+    const productUrl = p.url || '';
 
     return `<div class="products-mini-card2">
         ${badge ? `<span class="pmc-badge">${badge}</span>` : ''}
-        <div class="pmc-image" style="background:${bgColor};">
+        <div class="pmc-image"${!hasImage ? ` data-product-url="${productUrl}" data-product-name="${name.replace(/"/g,'&quot;')}" data-product-brand="${brand.replace(/"/g,'&quot;')}"` : ''}>
             ${hasImage ? `<img src="${p.image}" alt="${name}" class="pmc-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />` : ''}
             <div class="pmc-fallback-avatar" style="${hasImage ? 'display:none;' : 'display:flex;'}">
                 <span class="pmc-initial">${initial}</span>
@@ -2239,9 +2246,41 @@ function _buildProductMiniCard(p) {
         ${price ? `<div class="pmc-price">${price}</div>` : ''}
         <div class="pmc-btns">
             <a href="${link}" target="_blank" rel="noopener noreferrer" class="pmc-btn-view">View →</a>
-            <button class="pmc-btn-buy" onclick="openBuyModal('${encodedProduct}')">&#128722; Buy</button>
+            <button class="pmc-btn-buy" onclick="openBuyModal('${encodedProduct}')">Buy</button>
         </div>
     </div>`;
+}
+
+// ── Async product image loader ───────────────────────────────────
+// Fetches real product photos via server OG proxy after cards are in the DOM
+async function _loadProductImages(container) {
+    const cards = Array.from(container.querySelectorAll('.pmc-image[data-product-name], .pmc-image[data-product-url]'));
+    if (!cards.length) return;
+    for (let i = 0; i < cards.length; i += 4) {
+        await Promise.all(cards.slice(i, i + 4).map(async imgDiv => {
+            const url   = imgDiv.getAttribute('data-product-url') || '';
+            const name  = imgDiv.getAttribute('data-product-name') || '';
+            const brand = imgDiv.getAttribute('data-product-brand') || '';
+            if (!url && !name && !brand) return;
+            try {
+                const params = new URLSearchParams({ url, name, brand });
+                const res = await fetch('/api/product-image?' + params);
+                const { imageUrl } = await res.json();
+                if (!imageUrl) return;
+                const fallback = imgDiv.querySelector('.pmc-fallback-avatar');
+                const img = document.createElement('img');
+                img.className = 'pmc-img pmc-img--pending';
+                img.alt = 'Product';
+                img.onload = () => {
+                    img.classList.remove('pmc-img--pending');
+                    if (fallback) fallback.style.display = 'none';
+                };
+                img.onerror = () => img.remove();
+                imgDiv.insertBefore(img, fallback);
+                img.src = imageUrl;
+            } catch { /* keep fallback */ }
+        }));
+    }
 }
 
 // ── SCREEN 6: Avoid & Love Chips ────────────────────────────────
@@ -4394,7 +4433,7 @@ function createProductCard(p) {
         ${price ? `<div class="pmc-price">${price}</div>` : ''}
         <div class="pmc-btns">
             <a href="${link}" target="_blank" rel="noopener noreferrer" class="pmc-btn-view">View →</a>
-            <button class="pmc-btn-buy" onclick="openBuyModal('${encodedProduct}')">&#128722; Buy</button>
+            <button class="pmc-btn-buy" onclick="openBuyModal('${encodedProduct}')">Buy</button>
         </div>
     </div>`;
 }

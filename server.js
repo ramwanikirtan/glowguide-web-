@@ -1300,6 +1300,86 @@ app.post('/api/dermatologists', async (req, res) => {
     }
 });
 
+// ── Product image lookup ────────────────────────────────────────
+// Strategy 1: Open Beauty Facts (free, no key, community database)
+// Strategy 2: OG-image scraping from brand site (fallback)
+const ogImageCache = new Map();
+
+async function fetchFromOpenBeautyFacts(name, brand) {
+    const query = [brand, name].filter(Boolean).join(' ');
+    const searchUrl = 'https://world.openbeautyfacts.org/cgi/search.pl?' + new URLSearchParams({
+        search_terms: query,
+        action: 'process',
+        json: 1,
+        page_size: 5,
+        fields: 'product_name,brands,image_url,image_front_url'
+    });
+    const r = await axios.get(searchUrl, { timeout: 6000 });
+    const products = r.data?.products || [];
+    const nameLower = (name || '').toLowerCase();
+    const brandLower = (brand || '').toLowerCase();
+    // Prefer products that match on both brand and name
+    const ranked = products
+        .filter(p => p.image_front_url || p.image_url)
+        .sort((a, b) => {
+            const scoreA = ((a.brands || '').toLowerCase().includes(brandLower) ? 2 : 0)
+                         + ((a.product_name || '').toLowerCase().includes(nameLower.slice(0, 15)) ? 1 : 0);
+            const scoreB = ((b.brands || '').toLowerCase().includes(brandLower) ? 2 : 0)
+                         + ((b.product_name || '').toLowerCase().includes(nameLower.slice(0, 15)) ? 1 : 0);
+            return scoreB - scoreA;
+        });
+    return (ranked[0]?.image_front_url || ranked[0]?.image_url) || null;
+}
+
+async function fetchOgImage(productUrl) {
+    const r = await axios.get(productUrl, {
+        timeout: 7000,
+        maxRedirects: 4,
+        headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Accept-Encoding': 'gzip, deflate'   // no br — axios can't decode brotli
+        },
+        responseType: 'text'
+    });
+    const html = String(r.data || '');
+    const patterns = [
+        /<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i,
+        /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i,
+        /<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i,
+    ];
+    for (const re of patterns) {
+        const m = html.match(re);
+        if (m && m[1] && /^https?:\/\//.test(m[1])) return m[1];
+    }
+    return null;
+}
+
+app.get('/api/product-image', async (req, res) => {
+    const { url, name, brand } = req.query;
+    const cacheKey = (brand || '') + '::' + (name || '') + '::' + (url || '');
+    if (!name && !brand && !url) return res.json({ imageUrl: null });
+    if (ogImageCache.has(cacheKey)) return res.json({ imageUrl: ogImageCache.get(cacheKey) });
+
+    let imageUrl = null;
+
+    // 1. Open Beauty Facts — fast & works for most popular skincare brands
+    if (name || brand) {
+        try { imageUrl = await fetchFromOpenBeautyFacts(name, brand); } catch (_e) {}
+    }
+
+    // 2. OG scraping fallback — works for indie brands / sites without bot protection
+    if (!imageUrl && url) {
+        try { imageUrl = await fetchOgImage(url); } catch (_e) {}
+    }
+
+    ogImageCache.set(cacheKey, imageUrl);
+    const ttl = imageUrl ? 24 * 60 * 60 * 1000 : 60 * 60 * 1000;
+    setTimeout(() => ogImageCache.delete(cacheKey), ttl);
+    res.json({ imageUrl });
+});
+
 // Start server
 app.listen(PORT, () => {
     console.log(`GlowGuide running on port ${PORT}`);
